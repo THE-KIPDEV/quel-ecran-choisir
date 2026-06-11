@@ -69,6 +69,33 @@ document.addEventListener('click', function (e) {
   }
 });
 
+// KipStats engagement events (client-side only, guarded)
+function kp(n, d) {
+  try {
+    if (window.kipstats && window.kipstats.event) window.kipstats.event(n, d || {});
+  } catch (e) {}
+}
+
+document.addEventListener('click', function (e) {
+  // outbound_click — clic vers un lien d'achat affilie Amazon
+  var amazon = e.target.closest('a.btn-amazon');
+  if (amazon) {
+    var card = amazon.closest('.monitor-card');
+    var titleEl = card ? card.querySelector('.card-title') : null;
+    var product = titleEl ? titleEl.textContent.trim() : (amazon.getAttribute('href') || 'amazon');
+    kp('outbound_click', { product: product });
+    return;
+  }
+
+  // cta_click — clic sur une carte de categorie (CTA principal)
+  var cat = e.target.closest('a.cat-card');
+  if (cat) {
+    var h3 = cat.querySelector('h3');
+    var label = h3 ? h3.textContent.trim() : (cat.getAttribute('href') || 'categorie');
+    kp('cta_click', { cta: 'category_' + label });
+  }
+});
+
 // Active nav link based on current page
 (function () {
   var path = window.location.pathname;
