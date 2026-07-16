@@ -9,6 +9,7 @@ COPY creation.html /usr/share/nginx/html/
 COPY programmation.html /usr/share/nginx/html/
 COPY ultrawide.html /usr/share/nginx/html/
 COPY pas-cher.html /usr/share/nginx/html/
+COPY 27-ou-32-pouces.html /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/

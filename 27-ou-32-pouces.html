@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>27 ou 32 pouces ? PPI, recul et scaling comparés (2026)</title>
+  <meta name="description" content="27 ou 32 pouces : la taille ne se décide pas sans la résolution. Les 4 PPI réels, le recul minimal en cm, le piège du 1440p. Calculateur inclus.">
+  <link rel="canonical" href="https://quel-ecran-choisir.fr/27-ou-32-pouces.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <meta property="og:title" content="27 ou 32 pouces ? La matrice taille x résolution">
+  <meta property="og:description" content="109, 163, 93 ou 140 PPI : les 4 combinaisons 27/32 x 1440p/4K, avec le recul minimal en cm et le verdict scaling pour chacune.">
+  <meta property="og:url" content="https://quel-ecran-choisir.fr/27-ou-32-pouces.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Quel Écran Choisir">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="27 ou 32 pouces ? La matrice taille x résolution">
+  <meta name="twitter:description" content="Les 4 PPI réels, le recul minimal en cm, le piège du 32 pouces 1440p et le vrai coût du scaling Windows.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://kipstats.com/tracker.js" data-site="kp_b48dc281"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://quel-ecran-choisir.fr/#org",
+        "name": "Quel Écran Choisir",
+        "url": "https://quel-ecran-choisir.fr/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://quel-ecran-choisir.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "27 ou 32 pouces", "item": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html#article",
+        "headline": "27 ou 32 pouces : la taille ne se décide pas sans la résolution",
+        "description": "Les 4 combinaisons 27/32 pouces x 1440p/4K comparées en PPI réels, recul minimal, scaling et coût GPU.",
+        "url": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html",
+        "datePublished": "2026-07-16T09:00:00+02:00",
+        "dateModified": "2026-07-16T09:00:00+02:00",
+        "inLanguage": "fr",
+        "isPartOf": { "@id": "https://quel-ecran-choisir.fr/#org" },
+        "publisher": { "@id": "https://quel-ecran-choisir.fr/#org" },
+        "breadcrumb": { "@id": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html#breadcrumb" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://quel-ecran-choisir.fr/27-ou-32-pouces.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "27 ou 32 pouces : lequel choisir ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le 27 pouces en 1440p convient à la grande majorité des gens : 109 PPI, aucune mise à l'échelle nécessaire, et il tient sur un bureau de 60 à 70 cm de profondeur. Le 32 pouces ne devient intéressant qu'en 4K et à partir de 80 cm de recul environ, faute de quoi vous bougerez la tête pour lire les bords. En dessous de 80 cm de recul, le 27 pouces est le meilleur choix."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Un écran 32 pouces en 1440p, c'est vraiment crénelé ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un 32 pouces (31,5 pouces réels) en 2560x1440 affiche 93 PPI, soit un pixel de 0,27 mm contre 0,23 mm sur un 27 pouces 1440p. À 70 cm de distance, les pixels se voient sur les contours de texte et les icônes. C'est vivable en gaming à plus de 90 cm de recul, désagréable pour lire et écrire toute la journée, et franchement mauvais sur macOS qui n'applique plus de lissage sous-pixel depuis Mojave."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Un 32 pouces 4K affiche-t-il plus de choses qu'un 27 pouces 1440p ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pas forcément. À 150 % de mise à l'échelle, un 32 pouces 4K affiche un bureau logique de 2560x1440, c'est-à-dire exactement la même quantité de contenu qu'un 27 pouces 1440p, en plus gros et en plus net. Il faut descendre à 125 % pour obtenir 3072x1728, soit environ 44 % de surface utile en plus. Le gain d'espace dépend donc du réglage de scaling, pas de la diagonale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle distance et quelle profondeur de bureau pour un écran 32 pouces ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La dalle d'un 32 pouces mesure environ 70 x 39 cm. Pour retrouver le même angle visuel qu'un 27 pouces placé à 70 cm, il faut le reculer à environ 82 cm. Comptez donc un bureau de 80 cm de profondeur minimum, ou un bras d'écran pour gagner les 10 à 15 cm que mange le pied d'origine. Sur un bureau de 60 cm, un 32 pouces est trop près."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il une meilleure carte graphique pour jouer en 4K plutôt qu'en 1440p ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oui. Le 4K représente 8 294 400 pixels contre 3 686 400 en 1440p, soit exactement 2,25 fois plus de pixels à calculer à chaque image. Le budget de l'écran ne suffit donc pas : passer au 4K en gaming implique souvent une carte graphique d'un cran au-dessus. Si votre GPU est en entrée de gamme, le 27 pouces 1440p reste le choix rationnel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le 32 pouces fatigue-t-il plus les yeux et la nuque ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "À distance égale, oui. À 70 cm, un 32 pouces déborde de 46 % de la zone que l'œil balaie sans effort, contre 37 % pour un 27 pouces : vous tournez la tête plus souvent, et la tension se ressent en fin de journée. Reculé à 82 cm, il retrouve l'angle visuel confortable d'un 27 pouces à 70 cm. Le problème n'est donc pas la taille en soi, c'est la taille rapportée à votre recul."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div> quel-ecran-choisir.fr</a>
+      <nav class="nav" id="nav">
+        <a href="/">Accueil</a><a href="gaming.html">Gaming</a><a href="bureautique.html">Bureau</a><a href="creation.html">Création</a><a href="programmation.html">Dev</a><a href="ultrawide.html">Ultrawide</a><a href="pas-cher.html">Pas cher</a>
+      </nav>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </header>
+
+  <div class="container"><nav class="breadcrumb"><a href="/">Accueil</a> <span>/</span> <span>27 ou 32 pouces</span></nav></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-tag">Arbitrage de taille</div>
+      <h1>27 ou 32 pouces : lequel choisir ?</h1>
+      <p class="hero-sub">La taille ne se décide jamais seule. Elle se décide avec la résolution et la profondeur de votre bureau. Voici les quatre combinaisons possibles, chiffrées.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="verdict">
+        <h3>La réponse courte</h3>
+        <p><strong>27 pouces en 1440p pour environ 80 % des gens</strong> : 109 PPI, zéro mise à l'échelle, il tient sur un bureau de 60 cm. <strong>32 pouces en 4K</strong> uniquement si vous avez 80 cm de recul et le budget carte graphique qui va avec. Le <strong>32 pouces en 1440p</strong>, lui, est le regret d'achat n° 1 : 93 PPI, c'est visible.</p>
+      </div>
+
+      <p class="text-muted mt-2" style="font-size:0.85rem">Dernière mise à jour : juillet 2026. Tous les PPI et dimensions de cette page sont recalculés à la main à partir de la géométrie des dalles, formules données plus bas — vous pouvez les refaire.</p>
+
+      <div class="toc">
+        <h4>Sommaire</h4>
+        <ol>
+          <li><a href="#fausse-question">Pourquoi « 27 ou 32 » est une fausse question</a></li>
+          <li><a href="#matrice">La matrice 27/32 x 1440p/4K</a></li>
+          <li><a href="#piege-32-1440">Le piège du 32 pouces 1440p</a></li>
+          <li><a href="#scaling">La vérité sur le scaling Windows et macOS</a></li>
+          <li><a href="#cm">Dimensions réelles en cm et test du recul</a></li>
+          <li><a href="#gpu">Le coût GPU caché du 4K</a></li>
+          <li><a href="#cervicales">Mouvements de tête et fatigue cervicale</a></li>
+          <li><a href="#calculateur">Calculateur : quelle taille pour votre bureau ?</a></li>
+          <li><a href="#tableau">Tableau comparatif 27 vs 32</a></li>
+          <li><a href="#modeles">Un modèle par case de la matrice</a></li>
+          <li><a href="#profils">Le verdict par profil</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ol>
+      </div>
+
+      <!-- 1. FAUSSE QUESTION -->
+      <div id="fausse-question">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">L'angle</div>
+            <h2>Pourquoi « 27 ou 32 » est une fausse question</h2>
+          </div>
+        </div>
+
+        <p>Un écran de 32 pouces n'est pas « un 27 pouces en plus grand ». C'est la même grille de pixels étalée sur 36 % de surface en plus, ou une grille quatre fois plus dense selon la définition que vous prenez. Deux écrans de 32 pouces posés côte à côte peuvent offrir une expérience radicalement différente. La diagonale seule ne dit rien.</p>
+
+        <p>Les guides qui répondent « ça dépend de votre usage et de la place dont vous disposez » ne mentent pas. Ils sont juste inutiles. Ce qui décide vraiment, c'est le croisement de trois variables : la définition (1440p ou 4K), la densité de pixels qui en découle, et le recul dont vous disposez réellement entre vos yeux et la dalle. Quand on croise les deux premières, on obtient quatre cases. Trois sont bonnes. Une est un piège.</p>
+
+        <div class="guide-block">
+          <h3>Comment on calcule (refaites-le vous-même)</h3>
+          <p>La densité de pixels, ou PPI, se calcule ainsi : on prend la diagonale de la grille en pixels, et on la divise par la diagonale de l'écran en pouces.</p>
+          <p class="mt-2"><strong>PPI = √(largeur² + hauteur²) ÷ diagonale en pouces</strong></p>
+          <p class="mt-2">Pour du 1440p : √(2560² + 1440²) = 2 937 pixels de diagonale. Divisé par 27 pouces, cela donne 108,8, soit 109 PPI. Pour du 4K : √(3840² + 2160²) = 4 406 pixels, divisé par 27, cela donne 163 PPI. Et le pas de pixel, en millimètres, c'est simplement 25,4 ÷ PPI.</p>
+          <p class="mt-2 text-muted">Détail qui compte : un écran vendu comme « 32 pouces » mesure presque toujours <strong>31,5 pouces</strong> de diagonale réelle. Ça n'a l'air de rien, mais c'est ce qui fait passer le 1440p de 92 à 93 PPI et le 4K de 138 à 140 PPI. Les chiffres ci-dessous utilisent la diagonale réelle de 31,5 pouces, celle du produit que vous recevrez.</p>
+        </div>
+      </div>
+
+      <!-- 2. MATRICE -->
+      <div id="matrice">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le coeur de la décision</div>
+            <h2>La matrice 27/32 x 1440p/4K</h2>
+          </div>
+        </div>
+
+        <p>Quatre cases, quatre verdicts. C'est la seule vue qui permette de trancher.</p>
+
+        <div class="table-wrap">
+          <table class="comp-table">
+            <caption class="sr-only">Comparaison des quatre combinaisons de taille et de définition : PPI, pas de pixel, recul minimal, mise à l'échelle et verdict</caption>
+            <thead>
+              <tr>
+                <th>Combinaison</th>
+                <th>PPI réel</th>
+                <th>Pas de pixel</th>
+                <th>Recul mini</th>
+                <th>Mise à l'échelle</th>
+                <th>Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="model-name">27" 1440p</td>
+                <td class="price-cell">109</td>
+                <td>0,23 mm</td>
+                <td>60 cm</td>
+                <td><span class="text-green">Aucune (100 %)</span></td>
+                <td><strong class="text-green">Le défaut intelligent.</strong> Le seul combo natif sans compromis.</td>
+              </tr>
+              <tr>
+                <td class="model-name">27" 4K</td>
+                <td class="price-cell">163</td>
+                <td>0,16 mm</td>
+                <td>60 cm</td>
+                <td><span class="text-orange">150 % obligatoire</span></td>
+                <td><strong class="text-cyan">Oui si texte ou macOS.</strong> Même surface utile qu'un 27" 1440p, mais net comme du papier.</td>
+              </tr>
+              <tr>
+                <td class="model-name">32" 1440p</td>
+                <td class="price-cell">93</td>
+                <td>0,27 mm</td>
+                <td>90 cm</td>
+                <td><span class="text-green">Aucune (100 %)</span></td>
+                <td><strong class="text-orange">Le piège.</strong> Zéro place gagnée, pixels visibles. Gaming pur et recul important, sinon non.</td>
+              </tr>
+              <tr>
+                <td class="model-name">32" 4K</td>
+                <td class="price-cell">140</td>
+                <td>0,18 mm</td>
+                <td>80 cm</td>
+                <td><span class="text-orange">125 à 150 %</span></td>
+                <td><strong class="text-cyan">Le vrai grand écran.</strong> À 125 %, +44 % de surface utile. Exige de la place et du GPU.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-muted" style="font-size:0.85rem">PPI calculés sur les diagonales réelles (27,0 et 31,5 pouces). Le « recul mini » est la distance œil-dalle en dessous de laquelle le confort se dégrade nettement, dérivée de l'angle visuel (calcul détaillé plus bas). L'INRS retient une distance de travail de l'ordre de 50 à 70 cm sur écran classique — voir son <a href="https://www.inrs.fr/risques/travail-ecran.html" target="_blank" rel="noopener">dossier travail sur écran</a>.</p>
+
+        <div class="guide-block">
+          <h3>Ce que la matrice dit vraiment</h3>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4>La ligne 27" 1440p</h4>
+              <p>109 PPI, c'est le point d'équilibre. Windows tourne à 100 %, aucun logiciel ne devient flou, et le texte est déjà net. Rien à régler. C'est pour ça que le LG 27GP850P-B se retrouve dans tous les setups.</p>
+            </div>
+            <div class="guide-item">
+              <h4>La ligne 27" 4K</h4>
+              <p>163 PPI, du texte quasi imprimé. Mais à 150 %, vous retombez sur 2560x1440 de bureau logique : zéro pixel d'espace gagné face au 27" 1440p. Vous payez la netteté, pas la place.</p>
+            </div>
+            <div class="guide-item">
+              <h4>La ligne 32" 1440p</h4>
+              <p>93 PPI. Même grille 2560x1440 que le 27", donc strictement la même quantité de contenu affichée, mais 17 % plus gros et plus grossier. Vous payez de la diagonale pour ne rien gagner.</p>
+            </div>
+            <div class="guide-item">
+              <h4>La ligne 32" 4K</h4>
+              <p>140 PPI. La seule case qui donne à la fois de la place et de la netteté. Condition : 80 cm de recul, sinon vous scannerez l'écran de la tête toute la journée.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PIEGE 32 1440p -->
+      <div id="piege-32-1440">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le regret n° 1</div>
+            <h2>Le piège du 32 pouces 1440p</h2>
+          </div>
+        </div>
+
+        <p>C'est l'achat qui déçoit le plus, et il est facile de comprendre pourquoi. Le client se dit : « le 27 pouces 1440p est le bon compromis, je prends la même chose en plus grand ». Sauf que « plus grand » ne veut pas dire « plus de place ». La grille reste 2560x1440. Le nombre de fenêtres, de lignes de code, de colonnes de tableur affichées est <strong>identique au pixel près</strong>. Tout est juste étiré de 17 % : c'est un 27 pouces avec un zoom permanent.</p>
+
+        <p>Et le zoom a un prix. Le pas de pixel passe de 0,23 à 0,27 mm. Sur les contours de texte, sur les icônes, sur les diagonales fines des polices, ça se voit. Pas violemment, mais assez pour que le cerveau le note. Beaucoup de gens n'arrivent pas à nommer ce qui les gêne — ils disent « je le trouve moins beau que celui du bureau » sans savoir que la réponse tient dans 4 centièmes de millimètre.</p>
+
+        <div class="guide-block">
+          <h3>À qui le 32 pouces 1440p convient quand même</h3>
+          <p>On ne va pas être dogmatique. Il y a deux profils pour qui cette case tient debout :</p>
+          <ul class="pros mt-2">
+            <li><strong>Le gaming pur, à plus de 90 cm de recul.</strong> Sur un jeu en mouvement, à cette distance, 93 PPI ne se remarque plus vraiment. Et 1440p en 165 Hz reste beaucoup plus facile à alimenter que du 4K.</li>
+            <li><strong>Le setup salon ou canapé.</strong> Écran posé loin, gros texte assumé, lecture à distance. Là, la faible densité devient un avantage : tout est lisible de loin sans rien régler.</li>
+          </ul>
+          <ul class="cons mt-3">
+            <li>Si vous lisez et écrivez plus de deux heures par jour dessus, à 70 cm : non.</li>
+            <li>Si vous êtes sur Mac : non, et le paragraphe suivant explique pourquoi c'est même pire que sur PC.</li>
+            <li>Si vous l'achetez « pour avoir plus de place » : non, vous n'en gagnerez aucune.</li>
+          </ul>
+        </div>
+
+        <div class="affiliate-notice">
+          <strong>Pourquoi on peut vous dire « ne prenez pas le 32 pouces » :</strong> on ne vend aucun écran et on n'a aucun stock à écouler. Les sites de marques ont des moniteurs à vendre, les comparateurs de prix ont un catalogue à faire tourner : décourager un achat leur coûte de l'argent. Nous, un lecteur qui repart avec le bon écran du premier coup, c'est notre seul produit.
+        </div>
+      </div>
+
+      <!-- 4. SCALING -->
+      <div id="scaling">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le sujet que personne ne traite</div>
+            <h2>La vérité sur le scaling Windows et macOS</h2>
+          </div>
+        </div>
+
+        <p>Voilà le point que les guides français passent systématiquement sous silence, alors qu'il change tout au quotidien. Un écran 4K n'affiche pas ses 3840x2160 en taille réelle : à 100 %, le texte serait minuscule. Le système applique donc une mise à l'échelle. Et cette mise à l'échelle, selon votre OS, est soit transparente, soit une source d'agacement permanent.</p>
+
+        <div class="guide-block">
+          <h3>La règle de trois qui décide de votre bureau logique</h3>
+          <p>Divisez la définition par le taux de scaling, vous obtenez le bureau logique — la vraie surface de travail :</p>
+          <div class="table-wrap">
+            <table class="comp-table">
+              <caption class="sr-only">Surface de travail réelle selon la définition et le taux de mise à l'échelle</caption>
+              <thead>
+                <tr><th>Écran</th><th>Scaling</th><th>Bureau logique</th><th>Espace vs 27" 1440p</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="model-name">27" 1440p</td><td>100 %</td><td>2560 x 1440</td><td>référence</td></tr>
+                <tr><td class="model-name">27" 4K</td><td>150 %</td><td>2560 x 1440</td><td><span class="text-orange">identique</span></td></tr>
+                <tr><td class="model-name">32" 4K</td><td>150 %</td><td>2560 x 1440</td><td><span class="text-orange">identique</span></td></tr>
+                <tr><td class="model-name">32" 4K</td><td>125 %</td><td>3072 x 1728</td><td><span class="text-green">+44 % de surface</span></td></tr>
+                <tr><td class="model-name">32" 1440p</td><td>100 %</td><td>2560 x 1440</td><td><span class="text-orange">identique</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-2">Relisez la deuxième ligne. Un 27 pouces 4K réglé à 150 % — le réglage recommandé par Windows — affiche <strong>exactement autant de contenu</strong> qu'un 27 pouces 1440p à 290 €. Tout ce que vous achetez en payant 200 € de plus, c'est de la netteté. Ce qui est un excellent achat si vous lisez du texte huit heures par jour, et un achat absurde si vous vouliez « plus de place ».</p>
+        </div>
+
+        <h3 class="mt-3">Sur Windows : le 27" 1440p est le seul combo 100 % natif</h3>
+        <p>Windows a fait d'énormes progrès, mais le problème n'est pas Windows : ce sont les logiciels. Une application moderne, correctement déclarée « DPI aware », se redessine proprement à 125 ou 150 %. Une vieille application Win32 qui ne l'est pas se fait étirer en bitmap par le système. Résultat : du texte flou, des icônes baveuses. Les suspects habituels sont les clients VPN d'entreprise, les utilitaires de constructeurs, les vieux outils métiers en Java, les panneaux de configuration qui datent de dix ans.</p>
+        <p>À 100 % de scaling, ce problème n'existe pas. Voilà le vrai argument du 27 pouces 1440p, celui qu'on ne lit jamais dans les comparatifs : c'est la seule case de la matrice où la question du scaling ne se pose jamais. Si votre travail dépend d'un logiciel métier qui a dix ans, ce critère pèse plus lourd que la diagonale.</p>
+
+        <h3 class="mt-3">Sur macOS : l'inverse exact</h3>
+        <p>Sur Mac, la logique se retourne. macOS rend l'interface en 2x puis la redimensionne, ce qui garde le texte parfaitement net à n'importe quel réglage. Un 4K sur Mac, ça marche. En revanche, Apple a supprimé le lissage sous-pixel des polices depuis macOS Mojave, en 2018. Concrètement : sur une dalle peu dense, le Mac n'a plus aucun mécanisme pour compenser, là où Windows en garde un (ClearType).</p>
+        <p>Traduction pratique : <strong>un 32 pouces 1440p à 93 PPI branché sur un MacBook est nettement plus laid que le même écran branché sur un PC</strong>. C'est le cas d'usage à fuir le plus vite. Si vous êtes sur Mac, la question 27 ou 32 se réduit à une question 4K ou rien.</p>
+      </div>
+
+      <!-- 5. CM ET RECUL -->
+      <div id="cm">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Encombrement</div>
+            <h2>Dimensions réelles en cm et test du recul</h2>
+          </div>
+        </div>
+
+        <p>Les fiches produit parlent en pouces de diagonale, ce qui est la donnée la moins utile qui soit quand on doit savoir si l'écran tient sur le bureau. Voici les vraies dimensions de dalle, en 16:9, calculées depuis la diagonale.</p>
+
+        <div class="table-wrap">
+          <table class="comp-table">
+            <caption class="sr-only">Dimensions physiques de la dalle et profondeur de bureau requise</caption>
+            <thead>
+              <tr><th>Diagonale</th><th>Dalle (l x h)</th><th>Recul confortable</th><th>Profondeur de bureau</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="model-name">27" (27,0")</td>
+                <td>59,8 x 33,6 cm</td>
+                <td>60 à 80 cm</td>
+                <td class="price-cell">60 cm suffisent</td>
+              </tr>
+              <tr>
+                <td class="model-name">32" (31,5")</td>
+                <td>69,7 x 39,2 cm</td>
+                <td>80 à 100 cm</td>
+                <td class="price-cell">80 cm minimum</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-muted" style="font-size:0.85rem">Dimensions de la zone d'affichage. Ajoutez 1 à 3 cm de bordure, et surtout 10 à 20 cm de profondeur pour le pied d'origine — c'est lui qui vous vole votre recul.</p>
+
+        <h3 class="mt-3">D'où sort le « 82 cm » pour un 32 pouces</h3>
+        <p>On ne l'a pas inventé, on l'a dérivé. Un 27 pouces (59,8 cm de large) placé à 70 cm occupe un angle visuel horizontal de 46°. C'est la configuration de référence, celle que tout le monde trouve confortable. Pour qu'un 32 pouces (69,7 cm de large) occupe ce même angle de 46°, il faut le placer à <strong>82 cm</strong>. Le calcul : 34,85 ÷ tan(23,1°) = 81,6 cm.</p>
+        <p>D'où la règle simple : <strong>un 32 pouces demande environ 12 cm de recul de plus qu'un 27 pouces.</strong> Ce n'est pas énorme sur le papier. Sur un bureau IKEA de 60 cm de profondeur, c'est infranchissable.</p>
+
+        <div class="guide-block">
+          <h3>Le test du carton : 5 minutes, avant de commander</h3>
+          <p>Aucune fiche produit ne vous dira si vous supporterez la taille. Ce test, si.</p>
+          <ol class="mt-2" style="padding-left:1.5rem">
+            <li style="padding:0.35rem 0">Découpez un carton aux dimensions exactes de la dalle : <strong>70 x 39 cm</strong> pour un 32 pouces, <strong>60 x 34 cm</strong> pour un 27 pouces. Un carton de colis Amazon fait largement l'affaire.</li>
+            <li style="padding:0.35rem 0">Scotchez-le sur le mur ou calez-le contre l'écran actuel, exactement là où l'écran se retrouvera. Pensez à la hauteur : le haut de la dalle au niveau des yeux.</li>
+            <li style="padding:0.35rem 0">Asseyez-vous normalement. Mesurez au mètre ruban la distance entre vos yeux et le carton. C'est <em>ça</em>, votre recul réel — pas la profondeur affichée sur la fiche du bureau.</li>
+            <li style="padding:0.35rem 0">Regardez le coin en haut à gauche du carton, puis celui en haut à droite. Si vous devez tourner la tête et pas seulement les yeux, l'écran est trop grand ou trop près.</li>
+            <li style="padding:0.35rem 0">Moins de 80 cm au mètre ruban ? Le 32 pouces est hors-jeu, sauf à passer par un bras d'écran fixé au bord du bureau, qui récupère les 10 à 15 cm du pied.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. GPU -->
+      <div id="gpu">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le budget oublié</div>
+            <h2>Le coût GPU caché du 4K</h2>
+          </div>
+        </div>
+
+        <p>Personne ne le chiffre, alors chiffrons-le. Une image en 1440p contient 2560 x 1440 = <strong>3 686 400 pixels</strong>. Une image en 4K contient 3840 x 2160 = <strong>8 294 400 pixels</strong>. Le rapport est de <strong>2,25</strong>, exactement. À chaque image, à chaque seconde, votre carte graphique doit produire deux fois et quart plus de pixels.</p>
+
+        <p>Ce n'est pas de la théorie. En jeu, le nombre d'images par seconde ne s'effondre pas d'un facteur 2,25 (d'autres goulots entrent en jeu, et les technologies de reconstruction type DLSS ou FSR rattrapent une partie du retard), mais la chute est bien réelle et se compte en dizaines de pourcents. La conséquence est budgétaire : <strong>le passage au 4K n'est pas une dépense d'écran, c'est une dépense d'écran plus une dépense de carte graphique.</strong> Un 32 pouces 4K à 415 € posé devant un GPU d'entrée de gamme, c'est un écran qu'on ne pourra pas alimenter en jeu.</p>
+
+        <p>En bureautique, en revanche, ce calcul ne s'applique pas. Afficher des fenêtres statiques en 4K, même un chipset graphique intégré le fait sans transpirer. Le coût GPU du 4K est un problème de joueur, pas de télétravailleur. Si vous ne jouez pas, ignorez ce chapitre et prenez la définition qui vous plaît.</p>
+
+        <p class="mt-2">Pour aller plus loin sur la fréquence, la dalle et le couple GPU/définition : notre <a href="gaming.html">comparatif des écrans gaming 2026</a> détaille les modèles selon la carte graphique.</p>
+      </div>
+
+      <!-- 7. CERVICALES -->
+      <div id="cervicales">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Ergonomie</div>
+            <h2>Mouvements de tête et fatigue cervicale</h2>
+          </div>
+        </div>
+
+        <p>C'est l'angle mort absolu des comparatifs, alors que c'est ce qui vous fera revendre l'écran au bout de six mois. L'œil balaie confortablement une zone d'environ 15° de part et d'autre de l'axe du regard. Au-delà, le cou prend le relais. Rien d'anodin quand on répète le geste huit heures par jour.</p>
+
+        <p>Faisons la géométrie. À 70 cm de distance, ces ±15° couvrent une bande de 37,5 cm de large.</p>
+
+        <ul class="pros">
+          <li><strong>Un 27 pouces (59,8 cm) à 70 cm :</strong> environ 22 cm de dalle débordent de la zone de balayage oculaire, soit 37 % de la largeur. Ce sont les bords, là où on met rarement ce qu'on lit vraiment.</li>
+        </ul>
+        <ul class="cons mt-2">
+          <li><strong>Un 32 pouces (69,7 cm) à 70 cm :</strong> 32 cm débordent, soit 46 % de la dalle. Presque la moitié de votre écran vous impose de tourner la tête. Reculez-le à 82 cm et vous revenez au comportement du 27 pouces.</li>
+        </ul>
+
+        <p class="mt-3">C'est ça, la vraie contrainte du 32 pouces. Pas l'esthétique, pas le prix : la nuque. Un 32 pouces à 60 cm des yeux n'est pas « immersif », il est mal installé. Et le pire, c'est qu'on ne s'en rend pas compte le premier jour. On s'en rend compte au bout de trois semaines, quand la tension apparaît en fin de journée. Si vous tenez au 32 pouces sans avoir le recul, un bras d'écran est moins un accessoire de confort qu'une condition d'achat.</p>
+      </div>
+
+      <!-- 8. CALCULATEUR -->
+      <div id="calculateur">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Outil</div>
+            <h2>Calculateur : quelle taille pour votre bureau ?</h2>
+          </div>
+        </div>
+
+        <p>Quatre questions, un verdict tranché. On applique exactement les règles de la matrice ci-dessus, rien de plus — aucune donnée n'est envoyée nulle part, tout se calcule dans votre navigateur.</p>
+
+        <div class="guide-block">
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4><label for="calc-profondeur">Profondeur de votre bureau</label></h4>
+              <input type="number" id="calc-profondeur" value="60" min="30" max="150" step="5" inputmode="numeric" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem">
+              <p class="mt-1">En centimètres, du mur au bord. On en retire 10 cm pour le pied de l'écran afin d'estimer votre recul réel.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="calc-usage">Usage principal</label></h4>
+              <select id="calc-usage" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="bureautique">Bureautique / télétravail</option>
+                <option value="gaming">Gaming</option>
+                <option value="creation">Création / photo / vidéo</option>
+                <option value="programmation">Programmation</option>
+              </select>
+              <p class="mt-1">Ce que vous faites plus de la moitié du temps.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="calc-gpu">Carte graphique</label></h4>
+              <select id="calc-gpu" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="integre">Intégrée / entrée de gamme</option>
+                <option value="milieu">Milieu de gamme</option>
+                <option value="haut">Haut de gamme</option>
+              </select>
+              <p class="mt-1">Sans importance si vous ne jouez pas.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="calc-os">Système</label></h4>
+              <select id="calc-os" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="windows">Windows</option>
+                <option value="macos">macOS</option>
+                <option value="linux">Linux</option>
+              </select>
+              <p class="mt-1">Décisif : le scaling ne se comporte pas pareil.</p>
+            </div>
+          </div>
+          <button type="button" id="calc-btn" class="btn-amazon mt-3" style="width:100%">Calculer ma taille d'écran</button>
+        </div>
+
+        <div id="calc-result" class="verdict" hidden aria-live="polite">
+          <h3 id="calc-title"></h3>
+          <p id="calc-text"></p>
+          <p class="mt-2" id="calc-link-wrap"><a id="calc-link" class="btn-amazon" href="#" target="_blank" rel="nofollow noopener"></a></p>
+        </div>
+      </div>
+
+      <!-- 9. TABLEAU -->
+      <div id="tableau">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Comparatif</div>
+            <h2>Tableau comparatif rapide 27 vs 32</h2>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="comp-table">
+            <caption class="sr-only">Synthèse des différences entre un écran 27 pouces et un écran 32 pouces</caption>
+            <thead>
+              <tr><th>Critère</th><th>27 pouces</th><th>32 pouces</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="model-name">PPI en 1440p</td><td><span class="text-green">109 (net)</span></td><td><span class="text-orange">93 (visible)</span></td></tr>
+              <tr><td class="model-name">PPI en 4K</td><td>163</td><td>140</td></tr>
+              <tr><td class="model-name">Dalle</td><td>59,8 x 33,6 cm</td><td>69,7 x 39,2 cm</td></tr>
+              <tr><td class="model-name">Recul minimal</td><td class="price-cell">60 cm</td><td class="price-cell">80 cm</td></tr>
+              <tr><td class="model-name">Scaling Windows</td><td><span class="text-green">100 % en 1440p</span></td><td>125-150 % en 4K</td></tr>
+              <tr><td class="model-name">GPU requis (jeu)</td><td>Milieu de gamme en 1440p</td><td>Haut de gamme en 4K</td></tr>
+              <tr><td class="model-name">Surface utile réelle</td><td>2560 x 1440</td><td>2560 x 1440, ou 3072 x 1728 à 125 %</td></tr>
+              <tr><td class="model-name">Prix d'entrée constaté</td><td class="price-cell">~165 &euro; (QHD)</td><td class="price-cell">~415 &euro; (4K)</td></tr>
+              <tr><td class="model-name">Bureau de 60 cm</td><td><span class="text-green">Oui</span></td><td><span class="text-orange">Non</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted" style="font-size:0.85rem">Prix constatés en juillet 2026 sur les modèles de notre sélection, à vérifier avant achat : ils bougent tout le temps.</p>
+      </div>
+
+      <!-- 10. MODELES -->
+      <div id="modeles">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Sélection</div>
+            <h2>Un modèle par case de la matrice</h2>
+          </div>
+        </div>
+
+        <p>Un écran par case, choisi dans notre sélection existante. Trois recommandations et un avertissement.</p>
+
+        <article class="monitor-card monitor-card--top" id="case-27-1440">
+          <div class="card-badge">Case 27" 1440p — le défaut intelligent</div>
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">2560x1440<br>109 PPI - 100 %</div></div></div>
+            <div class="card-content">
+              <div class="card-title">LG UltraGear 27GP850P-B</div>
+              <div class="card-subtitle">27" QHD Nano IPS 165 Hz - Aucun scaling, aucun compromis</div>
+              <div class="specs">
+                <span class="spec spec--highlight"><span class="spec-label">PPI</span> <span class="spec-value">109</span></span>
+                <span class="spec"><span class="spec-label">Déf.</span> <span class="spec-value">2560x1440</span></span>
+                <span class="spec"><span class="spec-label">Fréq.</span> <span class="spec-value">165 Hz</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">Scaling</span> <span class="spec-value">100 %</span></span>
+                <span class="spec"><span class="spec-label">Recul</span> <span class="spec-value">60-80 cm</span></span>
+              </div>
+              <p class="mt-2" style="font-size:0.88rem">Si vous hésitez encore après avoir lu toute cette page, c'est celui-là. Il coche la seule case de la matrice où rien ne se paie : pas de mise à l'échelle, pas de logiciel flou, pas de GPU à changer, pas de bureau à racheter.</p>
+            </div>
+            <div class="card-action">
+              <div class="price">~290&euro;</div>
+              <div class="price-note">Prix constaté juillet 2026</div>
+              <a href="https://www.amazon.fr/dp/B08VS8YG8H?tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir sur Amazon</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="monitor-card" id="case-27-4k">
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">3840x2160<br>163 PPI - 150 %</div></div></div>
+            <div class="card-content">
+              <div class="card-title">ASUS ProArt PA279CRV</div>
+              <div class="card-subtitle">Case 27" 4K - 163 PPI, du texte quasi imprimé</div>
+              <div class="specs">
+                <span class="spec spec--highlight"><span class="spec-label">PPI</span> <span class="spec-value">163</span></span>
+                <span class="spec"><span class="spec-label">Déf.</span> <span class="spec-value">3840x2160</span></span>
+                <span class="spec"><span class="spec-label">DCI-P3</span> <span class="spec-value">99%</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">Scaling</span> <span class="spec-value">150 %</span></span>
+                <span class="spec"><span class="spec-label">USB-C</span> <span class="spec-value">96W PD</span></span>
+              </div>
+              <p class="mt-2" style="font-size:0.88rem">Le choix des créatifs et des Mac. Rappel honnête : à 150 %, il ne vous donnera pas un pixel de place en plus qu'un 27" 1440p. Vous payez la netteté et la couleur, rien d'autre. Sur macOS, ça les vaut.</p>
+            </div>
+            <div class="card-action">
+              <div class="price">~450&euro;</div>
+              <div class="price-note">Prix constaté juillet 2026</div>
+              <a href="https://www.amazon.fr/dp/B0BY2R4BHW?tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir sur Amazon</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="monitor-card" id="case-32-4k">
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">3840x2160<br>140 PPI - 125 %</div></div></div>
+            <div class="card-content">
+              <div class="card-title">Samsung ViewFinity S80D 32"</div>
+              <div class="card-subtitle">Case 32" 4K - le seul vrai « grand écran »</div>
+              <div class="specs">
+                <span class="spec spec--highlight"><span class="spec-label">PPI</span> <span class="spec-value">140</span></span>
+                <span class="spec"><span class="spec-label">Déf.</span> <span class="spec-value">3840x2160</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">À 125 %</span> <span class="spec-value">3072x1728</span></span>
+                <span class="spec"><span class="spec-label">USB-C</span> <span class="spec-value">90W PD</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">Recul</span> <span class="spec-value">80 cm mini</span></span>
+              </div>
+              <p class="mt-2" style="font-size:0.88rem">La seule case qui donne à la fois de la netteté et de la place. Condition non négociable : 80 cm entre vos yeux et la dalle. Faites le test du carton avant de commander, pas après.</p>
+            </div>
+            <div class="card-action">
+              <div class="price">~415&euro;</div>
+              <div class="price-note">Prix constaté juillet 2026</div>
+              <a href="https://www.amazon.fr/dp/B0D6VWGXLN?tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir sur Amazon</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="monitor-card" id="case-32-1440">
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">2560x1440<br>93 PPI - le piège</div></div></div>
+            <div class="card-content">
+              <div class="card-title">Case 32" 1440p : aucune recommandation</div>
+              <div class="card-subtitle">93 PPI, zéro place gagnée face à un 27" 1440p</div>
+              <p class="mt-2" style="font-size:0.88rem">On assume : il n'y a pas de modèle à mettre ici. Pas parce qu'ils seraient mal fabriqués — certains sont excellents — mais parce que la combinaison elle-même est mauvaise pour presque tout le monde. Le seul cas où elle tient : gaming pur, à plus de 90 cm de recul, avec un GPU qui ne suivrait pas en 4K. Si c'est très exactement votre situation, allez-y en connaissance de cause. Sinon, reprenez le 27" 1440p ci-dessus, vous afficherez rigoureusement la même chose en plus net et pour moins cher.</p>
+            </div>
+            <div class="card-action">
+              <div class="price">—</div>
+              <div class="price-note">Cas particulier uniquement</div>
+              <a href="https://www.amazon.fr/s?k=ecran+32+pouces+1440p+165Hz&tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir les modèles quand même</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- 11. PROFILS -->
+      <div id="profils">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Verdict</div>
+            <h2>Le verdict par profil</h2>
+          </div>
+        </div>
+
+        <div class="guide-block">
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4>Bureautique et télétravail</h4>
+              <p><strong>27" 1440p</strong> sur un bureau standard, <strong>32" 4K à 125 %</strong> si vous avez 80 cm de recul et que vous vivez dans les tableurs. C'est la seule config qui vous donne vraiment 44 % de surface en plus. Nos modèles : <a href="bureautique.html">comparatif écrans bureautique</a>.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Gaming</h4>
+              <p><strong>27" 1440p</strong>, sans hésiter. 165 Hz alimentables par un GPU raisonnable, 109 PPI, et l'écran entier dans le champ de vision. Le 32" 4K exige le haut de gamme des deux côtés. Détails : <a href="gaming.html">comparatif écrans gaming</a>.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Création, photo, vidéo</h4>
+              <p><strong>4K obligatoire</strong>, la taille suit votre bureau : 27" à 60-70 cm, 32" à partir de 80 cm. La densité prime sur la diagonale pour juger une image à 100 %. Voir : <a href="creation.html">comparatif écrans création</a>.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Programmation</h4>
+              <p><strong>27" 1440p</strong> sur PC, <strong>27" 4K</strong> sur Mac. Le code, c'est du texte lu toute la journée : la densité compte plus que la surface, et un vieux JAR flou à 150 % gâche la journée. Voir : <a href="programmation.html">comparatif écrans dev</a>.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Budget serré</h4>
+              <p><strong>27" 1440p</strong> à environ 165 €. Le meilleur euro par pixel utile du marché, très loin devant n'importe quel 32". Voir : <a href="pas-cher.html">les écrans à moins de 200 €</a>.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Vous vouliez surtout de la place</h4>
+              <p>Alors ce n'est pas un 32" qu'il vous faut, c'est un <strong>ultrawide 34" en 3440x1440</strong> : 110 PPI, soit la même densité qu'un 27" 1440p, mais 33 % de largeur en plus (79,7 cm contre 59,8). Voir : <a href="ultrawide.html">comparatif ultrawide</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">FAQ</div>
+            <h2>Questions fréquentes sur le 27 et le 32 pouces</h2>
+          </div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">27 ou 32 pouces : lequel choisir ?</div>
+            <div class="faq-a">
+              <p>Le 27 pouces en 1440p convient à la grande majorité des gens : 109 PPI, aucune mise à l'échelle nécessaire, et il tient sur un bureau de 60 à 70 cm de profondeur. Le 32 pouces ne devient intéressant qu'en 4K et à partir de 80 cm de recul environ, faute de quoi vous bougerez la tête pour lire les bords. En dessous de 80 cm de recul, le 27 pouces est le meilleur choix.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Un écran 32 pouces en 1440p, c'est vraiment crénelé ?</div>
+            <div class="faq-a">
+              <p>Un 32 pouces (31,5 pouces réels) en 2560x1440 affiche 93 PPI, soit un pixel de 0,27 mm contre 0,23 mm sur un 27 pouces 1440p. À 70 cm de distance, les pixels se voient sur les contours de texte et les icônes. C'est vivable en gaming à plus de 90 cm de recul, désagréable pour lire et écrire toute la journée, et franchement mauvais sur macOS qui n'applique plus de lissage sous-pixel depuis Mojave.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Un 32 pouces 4K affiche-t-il plus de choses qu'un 27 pouces 1440p ?</div>
+            <div class="faq-a">
+              <p>Pas forcément. À 150 % de mise à l'échelle, un 32 pouces 4K affiche un bureau logique de 2560x1440, c'est-à-dire exactement la même quantité de contenu qu'un 27 pouces 1440p, en plus gros et en plus net. Il faut descendre à 125 % pour obtenir 3072x1728, soit environ 44 % de surface utile en plus. Le gain d'espace dépend donc du réglage de scaling, pas de la diagonale.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Quelle distance et quelle profondeur de bureau pour un écran 32 pouces ?</div>
+            <div class="faq-a">
+              <p>La dalle d'un 32 pouces mesure environ 70 x 39 cm. Pour retrouver le même angle visuel qu'un 27 pouces placé à 70 cm, il faut le reculer à environ 82 cm. Comptez donc un bureau de 80 cm de profondeur minimum, ou un bras d'écran pour gagner les 10 à 15 cm que mange le pied d'origine. Sur un bureau de 60 cm, un 32 pouces est trop près.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Faut-il une meilleure carte graphique pour jouer en 4K plutôt qu'en 1440p ?</div>
+            <div class="faq-a">
+              <p>Oui. Le 4K représente 8 294 400 pixels contre 3 686 400 en 1440p, soit exactement 2,25 fois plus de pixels à calculer à chaque image. Le budget de l'écran ne suffit donc pas : passer au 4K en gaming implique souvent une carte graphique d'un cran au-dessus. Si votre GPU est en entrée de gamme, le 27 pouces 1440p reste le choix rationnel.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Le 32 pouces fatigue-t-il plus les yeux et la nuque ?</div>
+            <div class="faq-a">
+              <p>À distance égale, oui. À 70 cm, un 32 pouces déborde de 46 % de la zone que l'œil balaie sans effort, contre 37 % pour un 27 pouces : vous tournez la tête plus souvent, et la tension se ressent en fin de journée. Reculé à 82 cm, il retrouve l'angle visuel confortable d'un 27 pouces à 70 cm. Le problème n'est donc pas la taille en soi, c'est la taille rapportée à votre recul.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="affiliate-notice"><strong>Transparence :</strong> Ce site contient des liens affiliés Amazon. Nos recommandations sont 100% indépendantes, et cette page en est la preuve : une case entière de la matrice n'a droit à aucune reco.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="logo" style="margin-bottom:1rem"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div> quel-ecran-choisir.fr</div><p>Comparatifs indépendants d'écrans PC.</p></div>
+        <div><h4>Par usage</h4><ul><li><a href="gaming.html">Gaming</a></li><li><a href="bureautique.html">Bureautique</a></li><li><a href="creation.html">Création</a></li><li><a href="programmation.html">Programmation</a></li></ul></div>
+        <div><h4>Par format</h4><ul><li><a href="ultrawide.html">Ultrawide</a></li><li><a href="pas-cher.html">Moins de 200&euro;</a></li><li><a href="27-ou-32-pouces.html">27 ou 32 pouces ?</a></li></ul></div>
+        <div><h4>Ressources</h4><ul><li><a href="/#guide">Guide d'achat</a></li><li><a href="/#faq">FAQ</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 quel-ecran-choisir.fr</span><span>Liens affiliés Amazon | Prix indicatifs</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+  (function () {
+    var MODELES = {
+      'gaming-1440': { nom: 'LG UltraGear 27GP850P-B (~290 EUR)', url: 'https://www.amazon.fr/dp/B08VS8YG8H?tag=yohannleskits-21' },
+      'bureau-1440': { nom: 'Philips 27E1N5600AE (~215 EUR)', url: 'https://www.amazon.fr/dp/B09RZSJ7SB?tag=yohannleskits-21' },
+      'budget-1440': { nom: 'AOC Q27V4EA (~165 EUR)', url: 'https://www.amazon.fr/dp/B08XY8BJDS?tag=yohannleskits-21' },
+      'creation-4k': { nom: 'ASUS ProArt PA279CRV (~450 EUR)', url: 'https://www.amazon.fr/dp/B0BY2R4BHW?tag=yohannleskits-21' },
+      'bureau-4k27': { nom: 'Dell UltraSharp U2723QE (~500 EUR)', url: 'https://www.amazon.fr/dp/B09RSTWVTP?tag=yohannleskits-21' },
+      'grand-4k32': { nom: 'Samsung ViewFinity S80D 32" (~415 EUR)', url: 'https://www.amazon.fr/dp/B0D6VWGXLN?tag=yohannleskits-21' }
+    };
+
+    function verdict(profondeur, usage, gpu, os) {
+      var recul = profondeur - 10;
+      var mac = (os === 'macos');
+      var r = { recul: recul };
+
+      // Recul insuffisant : le 32" est mécaniquement hors-jeu.
+      if (recul < 80) {
+        r.taille = '27"';
+        if (recul < 55) {
+          r.note = 'Avec seulement ' + recul + ' cm de recul estimé, même un 27" sera un peu près. Un 24" mérite d\'être envisagé, ou un bras d\'écran pour récupérer les 10 à 15 cm du pied.';
+        } else {
+          r.note = 'Avec ' + recul + ' cm de recul estimé, le 32" est hors-jeu : il lui en faut 80. Le 27" est fait pour votre bureau.';
+        }
+      } else {
+        r.taille = '32"';
+        r.note = 'Avec ' + recul + ' cm de recul estimé, vous avez la place d\'un 32". Reste à ne pas se tromper de définition.';
+      }
+
+      // Définition.
+      if (r.taille === '27"') {
+        if (mac) {
+          r.res = '4K'; r.ppi = 163; r.scaling = '150 %';
+          r.modele = (usage === 'creation') ? MODELES['creation-4k'] : MODELES['bureau-4k27'];
+          r.pourquoi = 'Sur macOS, le 1440p en 27" est à éviter : Apple a supprimé le lissage sous-pixel depuis Mojave, et la densité de 109 PPI se voit. Le Mac gère le 4K proprement, prenez du 4K.';
+        } else if (usage === 'creation') {
+          r.res = '4K'; r.ppi = 163; r.scaling = '150 %';
+          r.modele = MODELES['creation-4k'];
+          r.pourquoi = 'En création, la densité prime : à 163 PPI vous jugez une image à 100 % sans être trompé par la grille de pixels. Acceptez le scaling à 150 %, et sachez que vous n\'y gagnerez aucune surface de travail face à un 27" 1440p.';
+        } else if (usage === 'gaming') {
+          r.res = '1440p'; r.ppi = 109; r.scaling = '100 %';
+          r.modele = MODELES['gaming-1440'];
+          r.pourquoi = (gpu === 'haut')
+            ? 'Même avec un GPU haut de gamme, le 27" 1440p reste le meilleur choix en jeu : votre carte servira à pousser les Hz plutôt que 2,25 fois plus de pixels. Et zéro problème de scaling au bureau.'
+            : 'Le 4K demande 2,25 fois plus de pixels par image que le 1440p : avec votre carte, ce serait un écran que vous ne pourriez pas alimenter. Le 27" 1440p à 165 Hz, c\'est le point d\'équilibre.';
+        } else {
+          r.res = '1440p'; r.ppi = 109; r.scaling = '100 %';
+          r.modele = (usage === 'programmation') ? MODELES['gaming-1440'] : MODELES['bureau-1440'];
+          r.pourquoi = 'C\'est la seule case de la matrice sans compromis : 109 PPI, Windows à 100 %, aucun vieux logiciel flou, aucun GPU à changer. Le défaut intelligent.';
+        }
+      } else {
+        if (usage === 'gaming' && gpu !== 'haut') {
+          r.taille = '27"'; r.res = '1440p'; r.ppi = 109; r.scaling = '100 %';
+          r.modele = MODELES['gaming-1440'];
+          r.pourquoi = 'Vous avez la place d\'un 32", mais pas le GPU pour l\'alimenter en 4K (2,25 fois plus de pixels qu\'en 1440p). Et le 32" en 1440p tomberait à 93 PPI, pour zéro surface gagnée. Restez sur le 27" 1440p : c\'est un choix par la donnée, pas par le budget.';
+          r.note = 'Recul estimé : ' + r.recul + ' cm. La place est là, mais la définition qui irait avec ne l\'est pas.';
+        } else {
+          r.res = '4K'; r.ppi = 140; r.scaling = '125 à 150 %';
+          r.modele = MODELES['grand-4k32'];
+          r.pourquoi = mac
+            ? 'Recul suffisant et macOS gère le 4K sans broncher : c\'est la seule case qui vous donne à la fois netteté et surface. Fuyez le 32" 1440p, à 93 PPI il serait très laid sur Mac.'
+            : 'Recul suffisant : réglez-le à 125 % et vous obtenez 3072x1728 de bureau logique, soit 44 % de surface en plus qu\'un 27" 1440p. À 150 %, vous retomberiez à 2560x1440 et n\'y gagneriez rien.';
+        }
+      }
+      return r;
+    }
+
+    var btn = document.getElementById('calc-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      var profondeur = parseInt(document.getElementById('calc-profondeur').value, 10);
+      if (isNaN(profondeur) || profondeur < 30) profondeur = 60;
+      var usage = document.getElementById('calc-usage').value;
+      var gpu = document.getElementById('calc-gpu').value;
+      var os = document.getElementById('calc-os').value;
+
+      var r = verdict(profondeur, usage, gpu, os);
+
+      document.getElementById('calc-title').textContent = 'Votre écran : ' + r.taille + ' en ' + r.res + ' (' + r.ppi + ' PPI, scaling ' + r.scaling + ')';
+      document.getElementById('calc-text').textContent = r.note + ' ' + r.pourquoi;
+
+      var link = document.getElementById('calc-link');
+      link.textContent = 'Voir le ' + r.modele.nom;
+      link.setAttribute('href', r.modele.url);
+      link.className = 'btn-amazon';
+
+      var box = document.getElementById('calc-result');
+      box.hidden = false;
+
+      try {
+        if (window.kipstats && window.kipstats.event) {
+          window.kipstats.event('cta_click', { cta: 'calculateur_27_32', verdict: r.taille + ' ' + r.res });
+        }
+      } catch (e) {}
+
+      box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  })();
+  </script>
+</body>
+</html>
