@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOC Q27G2U : test, specs et le piège du CQ27G2U (2026)</title>
+  <meta name="description" content="Q27G2U, CQ27G2U, 27G2U, CQ27G2 : quatre écrans différents, des noms quasi identiques. Décodeur de référence, specs complètes et verdict 2026.">
+  <link rel="canonical" href="https://quel-ecran-choisir.fr/aoc-q27g2u.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <meta property="og:title" content="AOC Q27G2U : ne commandez pas le CQ27G2U par erreur">
+  <meta property="og:description" content="Une lettre change la dalle, la courbure et la définition. Le décodeur de référence AOC, les specs complètes et le verdict 2026.">
+  <meta property="og:url" content="https://quel-ecran-choisir.fr/aoc-q27g2u.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Quel Écran Choisir">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AOC Q27G2U : ne commandez pas le CQ27G2U par erreur">
+  <meta name="twitter:description" content="Q27G2U, CQ27G2U, 27G2U, CQ27G2 : le décodeur de référence qui évite l'erreur de commande à 300 €.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://kipstats.com/tracker.js" data-site="kp_b48dc281"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://quel-ecran-choisir.fr/#org",
+        "name": "Quel Écran Choisir",
+        "url": "https://quel-ecran-choisir.fr/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://quel-ecran-choisir.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Gaming", "item": "https://quel-ecran-choisir.fr/gaming.html" },
+          { "@type": "ListItem", "position": 3, "name": "AOC Q27G2U", "item": "https://quel-ecran-choisir.fr/aoc-q27g2u.html" }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#product",
+        "name": "AOC Q27G2U",
+        "sku": "Q27G2U",
+        "category": "Écran PC gaming",
+        "description": "Écran 27 pouces IPS plat 2560x1440 à 144 Hz, FreeSync 48-144 Hz avec LFC, hub USB 3.0, sorti en décembre 2019.",
+        "brand": { "@type": "Brand", "name": "AOC" },
+        "url": "https://quel-ecran-choisir.fr/aoc-q27g2u.html",
+        "review": { "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#review" }
+      },
+      {
+        "@type": "Review",
+        "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#review",
+        "itemReviewed": { "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#product" },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "7.5",
+          "bestRating": "10",
+          "worstRating": "1"
+        },
+        "name": "AOC Q27G2U : encore pertinent en 2026, à condition de ne pas se tromper de référence",
+        "reviewBody": "Le Q27G2U reste un 27 pouces IPS plat 1440p 144 Hz honnête à 108,8 PPI, avec un pied complet et un hub USB rare à ce prix. Sa vraie faiblesse en 2026 n'est pas la dalle mais la concurrence : les 1440p à 180 Hz sont descendus dans la même zone de prix. Le risque principal reste l'erreur de commande vers le CQ27G2U, qui est un VA incurvé.",
+        "author": { "@type": "Organization", "name": "Quel Écran Choisir" },
+        "publisher": { "@id": "https://quel-ecran-choisir.fr/#org" },
+        "datePublished": "2026-07-16"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#article",
+        "headline": "AOC Q27G2U : le décodeur de référence avant de commander",
+        "description": "Q27G2U, CQ27G2U, 27G2U et CQ27G2 sont quatre écrans différents vendus sous des noms quasi identiques. Décodage, specs complètes et verdict 2026.",
+        "url": "https://quel-ecran-choisir.fr/aoc-q27g2u.html",
+        "datePublished": "2026-07-16T09:00:00+02:00",
+        "dateModified": "2026-07-16T09:00:00+02:00",
+        "inLanguage": "fr",
+        "isPartOf": { "@id": "https://quel-ecran-choisir.fr/#org" },
+        "publisher": { "@id": "https://quel-ecran-choisir.fr/#org" },
+        "breadcrumb": { "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#breadcrumb" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://quel-ecran-choisir.fr/aoc-q27g2u.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quelle est la différence entre l'AOC Q27G2U et le CQ27G2U ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le C initial signifie « curved » : le CQ27G2U est un écran incurvé à dalle VA, alors que le Q27G2U est plat à dalle IPS. Les deux sont des 27 pouces 2560x1440 à 144 Hz, mais tout le reste diffère. Le VA offre un contraste bien supérieur, autour de 2500:1 contre environ 1000:1 pour l'IPS, au prix d'angles de vision plus étroits et de traînées sombres en mouvement rapide. Une seule lettre sépare les deux références."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'AOC 27G2U est-il en 1440p ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le 27G2U est en 1920x1080, pas en 2560x1440. C'est le Q initial qui signale le QHD chez AOC : sans lui, la référence est en Full HD. Sur une diagonale de 27 pouces, le 1080p donne 81,6 PPI et un pas de pixel de 0,31 mm, contre 108,8 PPI et 0,23 mm pour le Q27G2U. C'est la confusion la plus coûteuse de la gamme."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que signifie le suffixe /BK sur les références AOC ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le /BK désigne uniquement le coloris noir du châssis. Un Q27G2U et un Q27G2U/BK sont exactement le même écran, avec la même dalle et les mêmes performances. Ce suffixe est fréquemment omis par les revendeurs, ce qui crée deux fiches produit pour un seul modèle. Il ne doit jamais entrer dans votre décision d'achat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'AOC Q27G2U vaut-il encore le coup en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sa dalle IPS 1440p à 144 Hz et ses 108,8 PPI n'ont pas vieilli : le combo 27 pouces 1440p reste le point d'équilibre en 2026, sans mise à l'échelle Windows. Ce qui a changé, c'est le marché autour. Sorti en décembre 2019, il est désormais concurrencé par des 1440p à 165 ou 180 Hz dans la même zone de prix. Il reste un achat correct s'il est nettement moins cher que ces derniers, pas au même tarif."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la plage FreeSync de l'AOC Q27G2U ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La plage FreeSync s'étend de 48 à 144 Hz, avec la compensation de faible fréquence (LFC) qui prend le relais sous 48 images par seconde en dupliquant les images. En pratique, la synchronisation reste donc active même quand un jeu tombe à 35 ou 40 fps. Ces mesures proviennent du test publié par pcmonitors.info."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "L'AOC Q27G2U a-t-il des haut-parleurs corrects ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Le site gamerstuff attribue 3 sur 10 au son de cet écran, pour une note globale de 8,2 sur 10. Les haut-parleurs intégrés dépannent pour une visioconférence ou une vidéo YouTube, mais ils ne remplacent ni un casque ni des enceintes. Sur un écran gaming à ce prix, c'est une constante du marché plutôt qu'un défaut spécifique à AOC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Combien de PPI fait un écran 27 pouces en 1440p ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Un 27 pouces en 2560x1440 affiche 108,8 PPI, soit environ 109. Le calcul : la diagonale de la grille de pixels vaut la racine carrée de 2560 au carré plus 1440 au carré, ce qui donne 2 937 pixels, divisés par 27 pouces. Le pas de pixel qui en découle est de 0,23 mm. C'est la densité qui permet à Windows de tourner à 100 % sans aucune mise à l'échelle."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div> quel-ecran-choisir.fr</a>
+      <nav class="nav" id="nav">
+        <a href="/">Accueil</a><a href="gaming.html">Gaming</a><a href="bureautique.html">Bureau</a><a href="creation.html">Création</a><a href="programmation.html">Dev</a><a href="ultrawide.html">Ultrawide</a><a href="pas-cher.html">Pas cher</a>
+      </nav>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </header>
+
+  <div class="container"><nav class="breadcrumb"><a href="/">Accueil</a> <span>/</span> <a href="gaming.html">Gaming</a> <span>/</span> <span>AOC Q27G2U</span></nav></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-tag">Décodeur de référence</div>
+      <h1>AOC Q27G2U : lequel commandez-vous vraiment ?</h1>
+      <p class="hero-sub">Q27G2U, CQ27G2U, 27G2U, CQ27G2. Quatre écrans différents, quatre dalles différentes, des noms à une lettre près. Voici comment ne pas se tromper de carton à 300 €.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="verdict">
+        <h3>La réponse courte</h3>
+        <p>Le <strong>Q27G2U</strong> est le 27 pouces <strong>IPS plat</strong> en 2560x1440 à 144 Hz. Le <strong>CQ27G2U</strong>, à une lettre près, est un <strong>VA incurvé</strong> — autre dalle, autre comportement, ghosting signalé. Le <strong>27G2U</strong>, sans le Q, est en <strong>1080p</strong> sur 27 pouces, soit 81,6 PPI : c'est l'erreur la plus chère de la gamme. Si vous voulez l'IPS plat, la référence exacte à taper dans la barre de recherche est <strong>Q27G2U</strong>, et rien d'autre.</p>
+      </div>
+
+      <p class="text-muted mt-2" style="font-size:0.85rem">Dernière mise à jour : juillet 2026. On n'affiche volontairement aucun prix sur cette page : nous n'avons pas de robot qui surveille les tarifs, et un prix figé dans une page finit toujours par mentir. Les liens renvoient vers la fiche Amazon de chaque référence, où le prix du jour fait foi.</p>
+
+      <div class="toc">
+        <h4>Sommaire</h4>
+        <ol>
+          <li><a href="#confusion">Le SERP est cassé, et voici pourquoi</a></li>
+          <li><a href="#grammaire">La grammaire des références AOC, décodée</a></li>
+          <li><a href="#decodeur">Le décodeur : tapez votre référence</a></li>
+          <li><a href="#tableau-refs">Les quatre références face à face</a></li>
+          <li><a href="#mesures">Les mesures — et de quel écran elles parlent vraiment</a></li>
+          <li><a href="#fiche">Fiche technique complète du Q27G2U</a></li>
+          <li><a href="#ghosting">Le ghosting du CQ27G2U</a></li>
+          <li><a href="#ppi">Calculateur PPI</a></li>
+          <li><a href="#notes">Le verdict par sous-critères (le son à 3/10)</a></li>
+          <li><a href="#2026">Vaut-il encore le coup en 2026 ?</a></li>
+          <li><a href="#comparateur">Votre comparateur</a></li>
+          <li><a href="#acheter">Où l'acheter, par référence</a></li>
+          <li><a href="#faq">Questions fréquentes</a></li>
+        </ol>
+      </div>
+
+      <!-- 1. CONFUSION -->
+      <div id="confusion">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">L'angle</div>
+            <h2>Le SERP est cassé, et voici pourquoi</h2>
+          </div>
+        </div>
+
+        <p>Tapez « aoc q27g2u » dans Google. Vous obtenez des tests. Beaucoup de tests. Le problème, c'est qu'ils ne parlent pas tous du même écran.</p>
+
+        <p>pcmonitors.info est la meilleure ressource au monde sur les moniteurs — un labo, un colorimètre, quinze mille mots de mesures instrumentées par test, de la pursuit photography sur vingt-quatre conditions différentes. Personne en France ne joue dans cette catégorie, nous compris. Et pourtant, la page de pcmonitors qui remonte sur « q27g2u » est un test du <strong>CQ27G2U</strong>. Pas du Q27G2U. Le C n'est pas une coquille : c'est un autre produit, avec une autre technologie de dalle.</p>
+
+        <p>Ce n'est pas un reproche à pcmonitors, qui nomme correctement son test. C'est un constat sur le SERP : Google traite « q27g2u » et « cq27g2u » comme la même requête, parce que les humains font la même confusion. Résultat, l'acheteur lit des mesures de contraste de 2 350 à 2 975:1, se dit « super, quel contraste pour un IPS », et commande le mauvais écran. Ou le bon écran en s'attendant au mauvais contraste. Les deux se produisent.</p>
+
+        <p>Pendant ce temps, lcd-compare et gamerstuff ont chacun leur fiche, sur des produits différents, sous des noms quasi identiques. Aucun des trois ne prend deux minutes pour dire : attention, il y a quatre références, voici laquelle est laquelle. C'est pourtant la seule question que se pose quelqu'un qui tape une référence produit dans un moteur de recherche. Il ne cherche pas un vingt-cinquième test. Il cherche à ne pas se planter.</p>
+
+        <p>Alors on ne va pas faire un vingt-cinquième test. On n'a ni labo ni colorimètre, et inventer des chiffres pour faire illusion serait la pire chose à faire. On va faire l'autre travail : celui qui est vacant.</p>
+      </div>
+
+      <!-- 2. GRAMMAIRE -->
+      <div id="grammaire">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Ce que personne n'explique</div>
+            <h2>La grammaire des références AOC, décodée</h2>
+          </div>
+        </div>
+
+        <p>Les références AOC ne sont pas des suites de caractères aléatoires. C'est un code, et il se lit de gauche à droite. Une fois qu'on le connaît, on décode n'importe quelle référence de la gamme sans chercher la fiche produit.</p>
+
+        <div class="guide-block">
+          <h3>Le code, position par position</h3>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4>C en tête = incurvé</h4>
+              <p>« Curved ». Et chez AOC sur la série G2, incurvé implique une dalle <strong>VA</strong> : pas d'IPS incurvé dans cette gamme. Le C vous dit donc deux choses d'un coup — la forme et la technologie.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Q en tête = QHD 1440p</h4>
+              <p>Pas de Q, pas de 1440p. Une référence qui commence directement par la taille (27G2U) est en <strong>1920x1080</strong>. C'est la lettre la plus chère de tout le code.</p>
+            </div>
+            <div class="guide-item">
+              <h4>U en tête = UHD 4K</h4>
+              <p>Le piège du code. En tête (U28G2U), le U signifie 3840x2160. En fin de référence, il signifie tout autre chose. Même lettre, deux sens, selon la position.</p>
+            </div>
+            <div class="guide-item">
+              <h4>U en fin = hub USB</h4>
+              <p>Le U final indique la présence d'un hub USB intégré. C'est toute la différence entre le CQ27G2 et le CQ27G2<strong>U</strong> : même dalle, mêmes performances, des ports en plus.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Les chiffres = la diagonale</h4>
+              <p>24, 27, 28, 32. Sans surprise, mais attention : ce sont des pouces commerciaux. Un « 27 » fait bien 27 pouces, un « 32 » fait en réalité 31,5 pouces.</p>
+            </div>
+            <div class="guide-item">
+              <h4>G2 = gamme Gaming, gén. 2</h4>
+              <p>La série gaming, avec les hautes fréquences et FreeSync. Une référence sans G2 (Q27<strong>V4</strong>EA) appartient à une gamme bureautique : même définition, mais 75 Hz au lieu de 144.</p>
+            </div>
+            <div class="guide-item">
+              <h4>/BK = coloris noir</h4>
+              <p>Rien d'autre. Un Q27G2U et un Q27G2U/BK sont le même écran. Les revendeurs omettent ou ajoutent ce suffixe au petit bonheur, ce qui crée deux fiches pour un seul produit. Ignorez-le.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Ce que le code ne dit pas</h4>
+              <p>Les révisions de dalle. AOC, comme tous les fabricants, peut changer de fournisseur de dalle en cours de vie d'un produit sans toucher à la référence. Le code ne vous protège pas de ça — personne ne le peut.</p>
+            </div>
+          </div>
+        </div>
+
+        <p>Appliquons. <strong>CQ27G2U</strong> se lit : incurvé, QHD, 27 pouces, gaming gen 2, hub USB. Donc VA incurvé 1440p 144 Hz avec USB. <strong>Q27G2U</strong> : QHD, 27 pouces, gaming gen 2, hub USB — pas de C, donc plat, donc IPS. <strong>27G2U</strong> : pas de Q, 1080p sur 27 pouces. Le code fonctionne. C'est ce qu'on a mis dans l'outil ci-dessous.</p>
+      </div>
+
+      <!-- 3. DECODEUR -->
+      <div id="decodeur">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Outil exclusif</div>
+            <h2>Le décodeur : tapez votre référence</h2>
+          </div>
+        </div>
+
+        <p>Collez la référence exacte que vous voyez sur la fiche du vendeur — avec ou sans le « AOC », avec ou sans le /BK, en majuscules ou pas. L'outil vous dit ce que vous êtes en train de commander. Rien n'est envoyé nulle part, tout se calcule dans votre navigateur.</p>
+
+        <div class="guide-block" data-aoc-decoder>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4><label for="aoc-input">Référence AOC</label></h4>
+              <input type="text" id="aoc-input" data-aoc-input value="Q27G2U" placeholder="Ex : CQ27G2U/BK" autocomplete="off" spellcheck="false" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem;text-transform:uppercase">
+              <p class="mt-1">Les quatre références qui se confondent, en un clic :</p>
+              <p class="mt-1">
+                <button type="button" class="btn-details" data-aoc-preset="Q27G2U">Q27G2U</button>
+                <button type="button" class="btn-details" data-aoc-preset="CQ27G2U">CQ27G2U</button>
+                <button type="button" class="btn-details" data-aoc-preset="27G2U">27G2U</button>
+                <button type="button" class="btn-details" data-aoc-preset="CQ27G2">CQ27G2</button>
+              </p>
+            </div>
+          </div>
+          <button type="button" data-aoc-btn class="btn-amazon mt-3" style="width:100%">Décoder ma référence</button>
+        </div>
+
+        <div data-aoc-result class="verdict" hidden aria-live="polite"></div>
+
+        <p class="text-muted mt-2" style="font-size:0.85rem">Six références sont dans notre table vérifiée. Pour toute autre référence AOC, l'outil applique la grammaire ci-dessus et vous le signale explicitement : un décodage déduit n'est pas une fiche constructeur, et on préfère vous le dire plutôt que d'avoir l'air sûr de nous.</p>
+
+        <div class="affiliate-notice">
+          <strong>Pourquoi cet outil existe :</strong> on gagne de l'argent quand vous cliquez sur un lien Amazon. Un décodeur qui vous dirait « oui oui, c'est le bon » à chaque fois maximiserait nos clics à court terme. Sauf qu'un écran renvoyé, c'est une commission annulée et un lecteur perdu. Notre intérêt et le vôtre pointent dans la même direction : que vous receviez le carton que vous attendiez.
+        </div>
+      </div>
+
+      <!-- 4. TABLEAU REFS -->
+      <div id="tableau-refs">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Face à face</div>
+            <h2>Les quatre références face à face</h2>
+          </div>
+        </div>
+
+        <p>Le tableau que le SERP entier aurait dû publier en 2020. Cliquez sur un en-tête de colonne pour trier.</p>
+
+        <div class="table-wrap">
+          <table class="comp-table" data-sortable>
+            <caption class="sr-only">Comparaison des quatre références AOC proches : dalle, courbure, définition, densité de pixels et fréquence</caption>
+            <thead>
+              <tr>
+                <th>Référence</th>
+                <th>Dalle</th>
+                <th>Forme</th>
+                <th>Définition</th>
+                <th>PPI</th>
+                <th>Hz</th>
+                <th>USB</th>
+                <th data-no-sort>Ce que vous recevez</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="model-name">Q27G2U</td>
+                <td><span class="text-green">IPS</span></td>
+                <td>Plate</td>
+                <td>2560x1440</td>
+                <td class="price-cell" data-sort-value="108.8">108,8</td>
+                <td data-sort-value="144">144</td>
+                <td>Oui</td>
+                <td><strong class="text-green">Celui que vous cherchez.</strong> Couleurs et angles IPS, écran plat, densité correcte.</td>
+              </tr>
+              <tr>
+                <td class="model-name">CQ27G2U</td>
+                <td><span class="text-orange">VA</span></td>
+                <td>Incurvée 1500R</td>
+                <td>2560x1440</td>
+                <td class="price-cell" data-sort-value="108.8">108,8</td>
+                <td data-sort-value="144">144</td>
+                <td>Oui</td>
+                <td><strong class="text-orange">Pas le même écran.</strong> Contraste très supérieur, mais incurvé et traînées sombres en mouvement.</td>
+              </tr>
+              <tr>
+                <td class="model-name">27G2U</td>
+                <td><span class="text-green">IPS</span></td>
+                <td>Plate</td>
+                <td><span class="text-orange">1920x1080</span></td>
+                <td class="price-cell" data-sort-value="81.6">81,6</td>
+                <td data-sort-value="144">144</td>
+                <td>Oui</td>
+                <td><strong class="text-orange">L'erreur chère.</strong> Du 1080p étiré sur 27 pouces. Pixels visibles à 70 cm.</td>
+              </tr>
+              <tr>
+                <td class="model-name">CQ27G2</td>
+                <td><span class="text-orange">VA</span></td>
+                <td>Incurvée 1500R</td>
+                <td>2560x1440</td>
+                <td class="price-cell" data-sort-value="108.8">108,8</td>
+                <td data-sort-value="144">144</td>
+                <td><span class="text-orange">Non</span></td>
+                <td>Le CQ27G2U sans le hub USB. Mêmes qualités, mêmes réserves, moins de ports.</td>
+              </tr>
+              <tr>
+                <td class="model-name">Q27V4EA</td>
+                <td><span class="text-green">IPS</span></td>
+                <td>Plate</td>
+                <td>2560x1440</td>
+                <td class="price-cell" data-sort-value="108.8">108,8</td>
+                <td data-sort-value="75"><span class="text-orange">75</span></td>
+                <td>Non</td>
+                <td>Pas de G2 : gamme bureautique. Bon écran de travail, mais oubliez le gaming.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-muted" style="font-size:0.85rem">PPI recalculés à la main pour chaque ligne : 2 937 pixels de diagonale ÷ 27 pouces = 108,8 en 1440p ; 2 203 ÷ 27 = 81,6 en 1080p. Vous pouvez refaire le calcul avec l'outil plus bas.</p>
+
+        <p>Deux enseignements sortent de ce tableau. D'abord, le <strong>27G2U</strong> est le vrai danger : il est plat, il est IPS, il est en 144 Hz, il coche donc toutes les cases que l'acheteur vérifie — sauf la définition, la seule qui ne se rattrape pas. Ensuite, le choix <strong>Q27G2U contre CQ27G2U</strong> n'est pas un choix entre un bon et un mauvais écran. C'est un arbitrage entre deux technologies de dalle. Encore faut-il savoir qu'on est en train de l'arbitrer.</p>
+      </div>
+
+      <!-- 5. MESURES -->
+      <div id="mesures">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Honnêteté</div>
+            <h2>Les mesures — et de quel écran elles parlent vraiment</h2>
+          </div>
+        </div>
+
+        <p>Voici les chiffres qui circulent sous la requête « q27g2u », tels que <a href="https://pcmonitors.info/" target="_blank" rel="noopener">pcmonitors.info</a> les a mesurés. On les cite, on ne les a pas produits, et on ne va pas faire semblant du contraire.</p>
+
+        <div class="table-wrap">
+          <table class="comp-table">
+            <caption class="sr-only">Mesures instrumentées publiées par pcmonitors.info</caption>
+            <thead>
+              <tr><th>Mesure</th><th>Valeur relevée</th><th>Ce que ça veut dire</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="model-name">Input lag</td><td class="price-cell">4,98 ms à 144 Hz</td><td>Sous 5 ms, aucun joueur ne le sent. Rien à redire.</td></tr>
+              <tr><td class="model-name">Input lag</td><td class="price-cell">7,48 ms à 60 Hz</td><td>La latence remonte quand on descend en fréquence. Normal, et toujours bon.</td></tr>
+              <tr><td class="model-name">Contraste statique</td><td class="price-cell">2 350:1 à 2 975:1</td><td><strong class="text-orange">Le chiffre qui trahit tout.</strong> Voir juste en dessous.</td></tr>
+              <tr><td class="model-name">Gamut sRGB</td><td class="price-cell">99 %</td><td>Couverture complète de l'espace standard. Bon pour un écran gaming.</td></tr>
+              <tr><td class="model-name">Gamut DCI-P3</td><td class="price-cell">92 %</td><td>Gamut large. Ce n'est pas le profil d'une dalle d'entrée de gamme.</td></tr>
+              <tr><td class="model-name">Gamut AdobeRGB</td><td class="price-cell">85 %</td><td>Suffisant pour du loisir, insuffisant pour de l'impression pro.</td></tr>
+              <tr><td class="model-name">Luminance</td><td class="price-cell">71 à 251 cd/m²</td><td>Le mini à 71 est appréciable : jouer la nuit sans se brûler les yeux.</td></tr>
+              <tr><td class="model-name">Uniformité</td><td class="price-cell">10 % moyen, 16 % max</td><td>Mesurée sur une grille de 9 points. Correct pour cette catégorie.</td></tr>
+              <tr><td class="model-name">Plage FreeSync</td><td class="price-cell">48 à 144 Hz + LFC</td><td>Le LFC duplique les images sous 48 fps : la sync reste active à 35 fps.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-muted" style="font-size:0.85rem">Mesures publiées par <a href="https://pcmonitors.info/" target="_blank" rel="noopener">pcmonitors.info</a>, seul détenteur de l'instrumentation qui permet de les produire. Nous n'avons ni sonde ni banc de test, et nous ne prétendons pas le contraire.</p>
+
+        <div class="guide-block">
+          <h3>Le contraste de 2 900:1 est la preuve que ce test n'est pas celui du Q27G2U</h3>
+          <p>Regardez la ligne « contraste statique ». Entre 2 350 et 2 975:1 selon la luminosité.</p>
+          <p class="mt-2">Une dalle IPS ne fait pas ça. Physiquement. La structure des cristaux liquides en commutation dans le plan laisse passer une fraction de la lumière du rétroéclairage même sur un pixel noir : c'est le fameux « IPS glow », et il plafonne le contraste statique d'un IPS aux alentours de <strong>1 000:1</strong>. Un IPS à 1 200:1 est déjà considéré comme excellent. Un IPS à 2 900:1 n'existe pas.</p>
+          <p class="mt-2">En revanche, 2 350 à 2 975:1, c'est exactement la signature d'une dalle <strong>VA</strong>, dont les cristaux s'alignent verticalement et bloquent bien mieux la lumière. Le 92 % de DCI-P3 va dans le même sens.</p>
+          <p class="mt-2">Conclusion : ces mesures sont celles du <strong>CQ27G2U</strong>, le VA incurvé. Pas du Q27G2U. On ne le déduit pas d'une intuition, on le déduit d'une impossibilité physique — et vous venez de le vérifier avec nous, sans colorimètre.</p>
+          <p class="mt-2 text-muted">Ce qui signifie, très concrètement : <strong>si vous achetez un Q27G2U en vous attendant au contraste de ce test, vous serez déçu.</strong> Attendez-vous à environ 1 000:1, avec les noirs délavés que ça implique dans une pièce sombre. C'est le prix des angles de vision et de la fidélité colorimétrique de l'IPS. C'est un arbitrage, pas un défaut.</p>
+        </div>
+
+        <p>C'est là que se trouve, à notre avis, la valeur de cette page. Pas dans une mesure de plus. Dans le fait de vous dire à quel écran une mesure appartient — ce qu'aucun des trois résultats en tête de SERP ne fait.</p>
+      </div>
+
+      <!-- 6. FICHE -->
+      <div id="fiche">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Les specs</div>
+            <h2>Fiche technique complète du Q27G2U</h2>
+          </div>
+        </div>
+
+        <p>Les données constructeur et revendeur, rassemblées. Rien d'exclusif ici, mais on préfère que vous les trouviez sur une seule page plutôt que sur cinq.</p>
+
+        <div class="table-wrap">
+          <table class="comp-table">
+            <caption class="sr-only">Caractéristiques techniques détaillées de l'AOC Q27G2U</caption>
+            <tbody>
+              <tr><td class="model-name">Diagonale</td><td>27 pouces (68,6 cm)</td></tr>
+              <tr><td class="model-name">Dalle</td><td>IPS, plate</td></tr>
+              <tr><td class="model-name">Définition</td><td>2560 x 1440 (QHD), 108,8 PPI, pas de pixel 0,23 mm</td></tr>
+              <tr><td class="model-name">Fréquence</td><td>144 Hz</td></tr>
+              <tr><td class="model-name">Contraste annoncé</td><td>3 000:1 statique, 80 000 000:1 dynamique</td></tr>
+              <tr><td class="model-name">Angles de vision</td><td>178° / 178°</td></tr>
+              <tr><td class="model-name">Synchronisation</td><td>FreeSync, plage 48-144 Hz, LFC actif</td></tr>
+              <tr><td class="model-name">Connectique vidéo</td><td>2 x HDMI, 1 x DisplayPort</td></tr>
+              <tr><td class="model-name">Connectique USB</td><td>5 x USB-A 3.0 (dont 1 sleep-and-charge) + 1 x USB-B (lien vers le PC)</td></tr>
+              <tr><td class="model-name">Inclinaison (tilt)</td><td>-3,5° à +21,5°</td></tr>
+              <tr><td class="model-name">Pivot</td><td>-30° à +30°</td></tr>
+              <tr><td class="model-name">Réglage en hauteur</td><td>130 mm</td></tr>
+              <tr><td class="model-name">Consommation</td><td>34 W en usage, 82 W en pointe</td></tr>
+              <tr><td class="model-name">Poids</td><td>5,21 kg</td></tr>
+              <tr><td class="model-name">Épaisseur</td><td>Moins de 4 cm</td></tr>
+              <tr><td class="model-name">Sortie</td><td>Décembre 2019</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Trois lignes méritent qu'on s'y arrête, parce qu'elles sont sous-estimées.</p>
+
+        <div class="guide-block">
+          <h3>Ce que les specs ne disent pas assez fort</h3>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4>Le pied fait tout ce qu'un pied doit faire</h4>
+              <p>130 mm de réglage en hauteur, pivot à ±30°, inclinaison de -3,5 à +21,5°. Sur cette gamme de prix, l'immense majorité des écrans se contentent d'une inclinaison, et vous finissez par caler des livres sous le socle. Ici, non. C'est le genre de détail qu'on ne remarque qu'à l'usage — et qui vous économise un bras d'écran à 40 €.</p>
+            </div>
+            <div class="guide-item">
+              <h4>Cinq ports USB, dont un sleep-and-charge</h4>
+              <p>C'est rare et c'est utile : clavier, souris, casque, clé USB branchés à l'écran plutôt qu'en rampant sous le bureau. Le port sleep-and-charge continue d'alimenter un téléphone quand le PC est éteint. C'est ce que le U final de la référence vous achète, et c'est toute la différence avec un CQ27G2.</p>
+            </div>
+            <div class="guide-item">
+              <h4>34 W, ça compte sur huit heures par jour</h4>
+              <p>Un chiffre qu'on cite rarement parce qu'il n'est pas sexy. À 34 W huit heures par jour, cinq jours sur sept, vous êtes autour de 70 kWh par an. Ce n'est pas un argument d'achat, mais si vous hésitez avec un 32 pouces 4K, sachez que la facture n'est pas la même.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. GHOSTING -->
+      <div id="ghosting">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le défaut qu'on escamote</div>
+            <h2>Le ghosting du CQ27G2U</h2>
+          </div>
+        </div>
+
+        <p>Si vous hésitez à prendre le CQ27G2U pour son contraste, lisez ce paragraphe avant de valider le panier.</p>
+
+        <p>Des utilisateurs remontent sur materiel.net des traînées sombres derrière les objets en mouvement rapide sur le CQ27G2U. Ce n'est pas une lubie de puriste : c'est le défaut structurel des dalles VA, documenté depuis toujours. Les cristaux à alignement vertical mettent plus de temps à passer d'un état sombre à un état sombre légèrement différent qu'à faire une transition franche. Résultat, dans les zones foncées d'un jeu — une cave, une scène de nuit, un couloir mal éclairé — un objet qui bouge vite laisse une comète derrière lui. On appelle ça le « black smearing », et c'est la contrepartie exacte du contraste à 2 900:1 dont on parlait plus haut. La même physique produit les deux.</p>
+
+        <p>Un test en labo qui note l'affichage 9,5 sur 10 ne ment pas non plus. Il mesure autre chose. La pursuit photography capte les transitions moyennes ; le black smearing se juge dans une partie de trois heures, dans une grotte de Skyrim, quand ça vous agace. Les deux points de vue sont valides, mais seul le second correspond à ce que vous allez vivre.</p>
+
+        <div class="guide-block">
+          <h3>Alors, IPS ou VA ? La règle honnête</h3>
+          <ul class="pros mt-2">
+            <li><strong>Prenez le CQ27G2U (VA incurvé)</strong> si vous jouez surtout à des jeux lents ou posés, si vous regardez beaucoup de films dans une pièce sombre, et si des noirs profonds vous importent plus que la précision du mouvement. Le contraste d'un VA face à un IPS, ce n'est pas un détail : c'est visible instantanément.</li>
+            <li><strong>Prenez le Q27G2U (IPS plat)</strong> si vous jouez à des jeux rapides, si vous travaillez aussi sur cet écran, si vous êtes parfois à deux devant, ou si vous ne supportez pas l'idée d'une ligne droite qui n'est pas droite. C'est le choix par défaut, et c'est le nôtre pour la majorité des gens.</li>
+          </ul>
+          <ul class="cons mt-3">
+            <li>Ne prenez pas le CQ27G2U « parce qu'il est mieux noté ». Les notes agrègent des critères qui ne sont pas les vôtres.</li>
+            <li>Ne prenez pas le Q27G2U en espérant les noirs d'un VA. Vous aurez environ 1 000:1, et c'est très bien pour un IPS.</li>
+            <li>Ne prenez ni l'un ni l'autre si vous n'avez pas vérifié la référence exacte sur la fiche du vendeur. C'est tout l'objet de cette page.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 8. PPI -->
+      <div id="ppi">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Outil</div>
+            <h2>Calculateur PPI</h2>
+          </div>
+        </div>
+
+        <p>Le seul chiffre qui départage vraiment le Q27G2U du 27G2U, c'est la densité de pixels. Voici de quoi la calculer pour n'importe quelle combinaison, et voir par vous-même l'écart entre les deux références.</p>
+
+        <div class="guide-block" data-ppi-calc>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4><label for="ppi-res">Définition</label></h4>
+              <select id="ppi-res" data-ppi-res style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="2560x1440">2560 x 1440 (QHD) — le Q27G2U</option>
+                <option value="1920x1080">1920 x 1080 (Full HD) — le 27G2U</option>
+                <option value="3840x2160">3840 x 2160 (4K)</option>
+                <option value="3440x1440">3440 x 1440 (ultrawide)</option>
+              </select>
+              <p class="mt-1">Celle qui figure sur la fiche du vendeur.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="ppi-diag">Diagonale en pouces</label></h4>
+              <input type="number" id="ppi-diag" data-ppi-diag value="27" min="15" max="60" step="0.1" inputmode="decimal" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem">
+              <p class="mt-1">Attention : un « 32 pouces » mesure en réalité 31,5 pouces. Un 27 fait bien 27.</p>
+            </div>
+          </div>
+          <button type="button" data-ppi-btn class="btn-amazon mt-3" style="width:100%">Calculer la densité</button>
+        </div>
+
+        <div data-ppi-result class="verdict" hidden aria-live="polite"></div>
+
+        <p class="mt-3">Faites le test : 2560x1440 en 27 pouces donne <strong>108,8 PPI</strong>, un pixel de 0,23 mm. Repassez en 1920x1080 sur la même diagonale, vous tombez à <strong>81,6 PPI</strong>, un pixel de 0,31 mm. C'est 33 % de grain en plus. À 70 cm de distance, ça se voit sur chaque contour de texte, sur chaque icône, sur chaque diagonale de police. Voilà pourquoi le Q du Q27G2U est la lettre la plus importante de la référence.</p>
+
+        <p>Curiosité qui éclaire tout : le même 1080p sur un 23,8 pouces donne 92,6 PPI, une densité parfaitement honnête. Le problème du 27G2U n'est donc pas sa définition en soi. C'est sa définition rapportée à sa diagonale. Un pixel n'est jamais bon ou mauvais dans l'absolu — il est bon ou mauvais étalé sur une surface donnée. Le sujet est creusé en détail sur notre page <a href="27-ou-32-pouces.html">27 ou 32 pouces</a>.</p>
+      </div>
+
+      <!-- 9. NOTES -->
+      <div id="notes">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Verdict</div>
+            <h2>Le verdict par sous-critères</h2>
+          </div>
+        </div>
+
+        <p>Une note globale unique ne sert à rien. « 8,2 sur 10 » ne vous dit pas si les 1,8 point manquants concernent la dalle, qui vous importe, ou les haut-parleurs, dont vous n'avez rien à faire. gamerstuff a la bonne idée de détailler, et le détail est éloquent.</p>
+
+        <div class="guide-block">
+          <h3>Les notes de gamerstuff, sous-critère par sous-critère</h3>
+          <div class="scores mt-2">
+            <div class="score-row">
+              <span class="score-label">Réglages</span>
+              <div class="score-bar"><div class="score-fill score-fill--excellent" style="width:98%"></div></div>
+              <span class="score-num score-num--excellent">9.8</span>
+            </div>
+            <div class="score-row">
+              <span class="score-label">Affichage</span>
+              <div class="score-bar"><div class="score-fill score-fill--excellent" style="width:95%"></div></div>
+              <span class="score-num score-num--excellent">9.5</span>
+            </div>
+            <div class="score-row">
+              <span class="score-label">Design</span>
+              <div class="score-bar"><div class="score-fill score-fill--excellent" style="width:95%"></div></div>
+              <span class="score-num score-num--excellent">9.5</span>
+            </div>
+            <div class="score-row">
+              <span class="score-label">Rapport Q/P</span>
+              <div class="score-bar"><div class="score-fill score-fill--excellent" style="width:90%"></div></div>
+              <span class="score-num score-num--excellent">9.0</span>
+            </div>
+            <div class="score-row">
+              <span class="score-label">Son</span>
+              <div class="score-bar"><div class="score-fill score-fill--poor" style="width:30%"></div></div>
+              <span class="score-num score-num--average">3.0</span>
+            </div>
+          </div>
+          <p class="text-muted mt-2" style="font-size:0.85rem">Notes attribuées par gamerstuff, note globale 8,2/10. Nous les reprenons parce qu'elles sont détaillées, pas parce qu'on les partage toutes.</p>
+        </div>
+
+        <p>Le 3 sur 10 au son est mérité et sans importance. Les haut-parleurs intégrés d'un écran gaming à ce tarif dépannent pour une visio et rien d'autre. Personne n'achète cet écran pour écouter de la musique. Si vous comptiez le faire, budgétez trente euros d'enceintes et n'y pensez plus — ça n'a aucune influence sur la décision d'achat, et c'est pour ça qu'une note globale qui écrase ce 3 avec le reste est trompeuse dans les deux sens.</p>
+
+        <p>Le 9,8 en réglages, en revanche, dit quelque chose de réel : le pied complet et l'OSD. Et le 9,5 en affichage doit se lire en gardant en tête ce qu'on a établi plus haut — chez gamerstuff comme ailleurs, il faut vérifier de quelle référence on parle avant d'importer une note.</p>
+
+        <div class="verdict">
+          <h3>Notre verdict, sans note globale</h3>
+          <p>Le Q27G2U fait très bien trois choses : une image IPS 1440p honnête à 108,8 PPI, une ergonomie complète que ses concurrents directs n'ont pas, et un hub USB à cinq ports. Il en fait une mal : le son. Et il en subit une qu'on ne peut pas lui reprocher : il a plus de six ans, et le marché a bougé sous lui. <strong>Le vrai risque, quand vous l'achetez, n'est pas la qualité du produit. C'est de recevoir le CQ27G2U.</strong></p>
+        </div>
+      </div>
+
+      <!-- 10. 2026 -->
+      <div id="2026">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Le trou du SERP</div>
+            <h2>Vaut-il encore le coup en 2026 ?</h2>
+          </div>
+        </div>
+
+        <p>Question interdite au SERP actuel. Tous les tests qui rankent sur cette référence datent de 2020, et un test de 2020 ne peut évidemment pas comparer un écran à ce qui est sorti après lui. Le Q27G2U est sorti en <strong>décembre 2019</strong>. Il a plus de six ans.</p>
+
+        <p>La bonne nouvelle : la dalle n'a pas vieilli sur le critère qui compte le plus. 27 pouces en 1440p, c'est 108,8 PPI, et 108,8 PPI reste en 2026 le point d'équilibre de tout le marché — Windows tourne à 100 %, aucun logiciel ne devient flou, rien à régler. Un 27 pouces 1440p acheté en 2019 affiche exactement la même densité qu'un 27 pouces 1440p acheté aujourd'hui. La physique ne se démode pas.</p>
+
+        <p>La mauvaise : tout le reste a bougé. En 2019, 144 Hz en 1440p sur une dalle IPS avec un pied complet et un hub USB, c'était une proposition forte. Depuis, les 1440p à 165 Hz sont devenus la norme, les 180 Hz sont arrivés dans les gammes moyennes, et l'OLED est descendu à des tarifs qui n'étaient pas imaginables il y a six ans. Le Q27G2U n'a pas empiré. Il s'est fait rattraper, puis dépasser, sans bouger.</p>
+
+        <div class="guide-block">
+          <h3>La règle de décision, en une phrase</h3>
+          <p>Le Q27G2U reste un bon achat s'il est <strong>nettement moins cher</strong> qu'un 1440p 165 ou 180 Hz de 2026. Pas s'il est au même prix. Un écran de six ans doit se payer comme un écran de six ans.</p>
+          <p class="mt-2">Concrètement, avant de valider : ouvrez la fiche du Q27G2U et celle du <a href="gaming.html#top">LG UltraGear 27GP850P-B</a> dans deux onglets. Comparez les prix du jour. Si l'écart est faible, prenez le plus récent — vous gagnez des Hz, une dalle Nano IPS et six ans de garantie constructeur en moins de risque. Si l'écart est net, le Q27G2U reste une très bonne affaire, et l'ergonomie du pied AOC n'a rien à envier à personne.</p>
+          <p class="mt-2 text-muted">On ne peut pas faire ce calcul à votre place, et c'est assumé : on n'a pas de robot qui surveille les prix. Un site qui vous afficherait « 307 € » aujourd'hui vous afficherait toujours 307 € dans huit mois. On préfère vous donner la règle plutôt qu'un chiffre périmé.</p>
+        </div>
+
+        <p>Un dernier point que six ans de vie produit rendent inévitable : les <strong>révisions de dalle silencieuses</strong>. Sur un produit aussi ancien, le fournisseur de dalle a pu changer sans que la référence bouge d'un caractère. Les mesures de 2020 décrivent l'exemplaire testé en 2020. C'est vrai pour tous les tests de tous les sites, y compris ceux qui affichent des relevés au centième de milliseconde. Personne ne peut vous garantir que l'écran dans le carton est celui du banc de test. C'est aussi pour ça qu'une page qui vous apprend à lire une référence vaut mieux qu'une page qui vous récite un contraste.</p>
+      </div>
+
+      <!-- 11. COMPARATEUR -->
+      <div id="comparateur">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Outil</div>
+            <h2>Votre comparateur (<span data-compare-count>0</span>)</h2>
+          </div>
+        </div>
+
+        <p>Ajoutez les références qui vous intéressent : la liste est gardée dans votre navigateur et vous suit sur les autres pages du site. Rien n'est envoyé sur un serveur, rien ne nécessite de compte.</p>
+
+        <div class="guide-block">
+          <p class="mb-2"><strong>Ajouter au comparateur :</strong></p>
+          <p>
+            <button type="button" class="btn-details" data-compare-add="Q27G2U" data-compare-nom="AOC Q27G2U" data-compare-dalle="IPS plate" data-compare-res="2560x1440" data-compare-hz="144 Hz">+ Comparer</button>
+            <span class="text-muted">Q27G2U</span>
+          </p>
+          <p class="mt-2">
+            <button type="button" class="btn-details" data-compare-add="CQ27G2U" data-compare-nom="AOC CQ27G2U" data-compare-dalle="VA incurvée" data-compare-res="2560x1440" data-compare-hz="144 Hz">+ Comparer</button>
+            <span class="text-muted">CQ27G2U</span>
+          </p>
+          <p class="mt-2">
+            <button type="button" class="btn-details" data-compare-add="27G2U" data-compare-nom="AOC 27G2U" data-compare-dalle="IPS plate" data-compare-res="1920x1080" data-compare-hz="144 Hz">+ Comparer</button>
+            <span class="text-muted">27G2U</span>
+          </p>
+          <p class="mt-2">
+            <button type="button" class="btn-details" data-compare-add="CQ27G2" data-compare-nom="AOC CQ27G2" data-compare-dalle="VA incurvée" data-compare-res="2560x1440" data-compare-hz="144 Hz">+ Comparer</button>
+            <span class="text-muted">CQ27G2</span>
+          </p>
+        </div>
+
+        <div data-compare-list class="mt-3" aria-live="polite"></div>
+        <p class="mt-2"><button type="button" class="btn-details" data-compare-clear>Vider le comparateur</button></p>
+      </div>
+
+      <!-- 12. ACHETER -->
+      <div id="acheter">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Achat</div>
+            <h2>Où l'acheter, par référence</h2>
+          </div>
+        </div>
+
+        <p>Un lien par référence, pas un lien unique. C'est tout l'intérêt d'avoir lu cette page : vous savez maintenant lequel vous voulez, et chaque bouton vous emmène sur la bonne recherche Amazon, avec le prix du jour.</p>
+
+        <article class="monitor-card monitor-card--top" id="achat-q27g2u">
+          <div class="card-badge">L'IPS plat — celui que vous cherchez</div>
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">2560x1440<br>IPS plat - 144 Hz</div></div></div>
+            <div class="card-content">
+              <div class="card-title">AOC Q27G2U</div>
+              <div class="card-subtitle">27" QHD IPS 144 Hz - Plat, pied complet, hub USB 5 ports</div>
+              <div class="specs">
+                <span class="spec spec--highlight"><span class="spec-label">Dalle</span> <span class="spec-value">IPS plate</span></span>
+                <span class="spec"><span class="spec-label">Déf.</span> <span class="spec-value">2560x1440</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">PPI</span> <span class="spec-value">108,8</span></span>
+                <span class="spec"><span class="spec-label">Fréq.</span> <span class="spec-value">144 Hz</span></span>
+                <span class="spec"><span class="spec-label">Sync</span> <span class="spec-value">FreeSync 48-144 + LFC</span></span>
+                <span class="spec"><span class="spec-label">USB</span> <span class="spec-value">5 ports 3.0</span></span>
+              </div>
+              <p class="mt-2" style="font-size:0.88rem">Le bon choix si vous jouez à des jeux rapides, si vous travaillez aussi sur cet écran, ou si vous ne voulez simplement pas d'incurvé. Attendez-vous à un contraste autour de 1 000:1, pas aux 2 900:1 des tests qui parlent en réalité du CQ27G2U.</p>
+            </div>
+            <div class="card-action">
+              <div class="price-note">Prix du jour sur Amazon</div>
+              <a href="https://www.amazon.fr/s?k=AOC+Q27G2U&tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir le Q27G2U sur Amazon</a>
+              <button type="button" class="btn-details" data-compare-add="Q27G2U" data-compare-nom="AOC Q27G2U" data-compare-dalle="IPS plate" data-compare-res="2560x1440" data-compare-hz="144 Hz">+ Comparer</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="monitor-card" id="achat-cq27g2u">
+          <div class="card-badge">Le VA incurvé — un autre écran</div>
+          <div class="card-inner">
+            <div class="card-visual"><div class="monitor-frame"><div class="screen-text">2560x1440<br>VA incurvé 1500R</div></div></div>
+            <div class="card-content">
+              <div class="card-title">AOC CQ27G2U</div>
+              <div class="card-subtitle">27" QHD VA incurvé 144 Hz - Contraste élevé, traînées sombres</div>
+              <div class="specs">
+                <span class="spec spec--highlight"><span class="spec-label">Dalle</span> <span class="spec-value">VA incurvée</span></span>
+                <span class="spec"><span class="spec-label">Déf.</span> <span class="spec-value">2560x1440</span></span>
+                <span class="spec"><span class="spec-label">PPI</span> <span class="spec-value">108,8</span></span>
+                <span class="spec"><span class="spec-label">Fréq.</span> <span class="spec-value">144 Hz</span></span>
+                <span class="spec spec--highlight"><span class="spec-label">Contraste</span> <span class="spec-value">~2 500:1</span></span>
+                <span class="spec"><span class="spec-label">Courbure</span> <span class="spec-value">1500R</span></span>
+              </div>
+              <p class="mt-2" style="font-size:0.88rem">À prendre en connaissance de cause : des noirs que l'IPS ne sait pas produire, contre du black smearing dans les scènes sombres en mouvement. Bon pour les jeux posés et les films dans le noir, moins pour l'esport et le travail à deux devant l'écran.</p>
+            </div>
+            <div class="card-action">
+              <div class="price-note">Prix du jour sur Amazon</div>
+              <a href="https://www.amazon.fr/s?k=AOC+CQ27G2U&tag=yohannleskits-21" target="_blank" rel="nofollow noopener" class="btn-amazon">Voir le CQ27G2U sur Amazon</a>
+              <button type="button" class="btn-details" data-compare-add="CQ27G2U" data-compare-nom="AOC CQ27G2U" data-compare-dalle="VA incurvée" data-compare-res="2560x1440" data-compare-hz="144 Hz">+ Comparer</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="affiliate-notice">
+          <strong>Sur ces liens :</strong> ce sont des liens affiliés Amazon. Si vous achetez après avoir cliqué, on touche une commission, sans surcoût pour vous. Ils pointent vers une <em>recherche</em> par référence exacte, pas vers une fiche produit figée — c'est volontaire. Une fiche Amazon peut être retirée, fusionnée avec une autre référence ou remplacée par une variante ; la recherche par référence, elle, vous montre ce qui existe réellement aujourd'hui sous ce nom. Vérifiez toujours la référence complète sur la page du vendeur avant de valider.
+        </div>
+
+        <p class="mt-3">Si aucune des deux références ne vous convainc après tout ça, c'est une réponse valable aussi. Notre sélection gaming complète est sur la page <a href="gaming.html">meilleurs écrans gaming</a>, et l'arbitrage de la diagonale est traité sur <a href="27-ou-32-pouces.html">27 ou 32 pouces</a>.</p>
+      </div>
+
+      <!-- 13. FAQ -->
+      <div id="faq">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">FAQ</div>
+            <h2>Questions fréquentes</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Quelle est la différence entre l'AOC Q27G2U et le CQ27G2U ?</div>
+            <div class="faq-a"><p>Le C initial signifie « curved » : le CQ27G2U est un écran incurvé à dalle VA, alors que le Q27G2U est plat à dalle IPS. Les deux sont des 27 pouces 2560x1440 à 144 Hz, mais tout le reste diffère. Le VA offre un contraste bien supérieur, autour de 2 500:1 contre environ 1 000:1 pour l'IPS, au prix d'angles de vision plus étroits et de traînées sombres en mouvement rapide. Une seule lettre sépare les deux références.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">L'AOC 27G2U est-il en 1440p ?</div>
+            <div class="faq-a"><p>Non. Le 27G2U est en 1920x1080, pas en 2560x1440. C'est le Q initial qui signale le QHD chez AOC : sans lui, la référence est en Full HD. Sur une diagonale de 27 pouces, le 1080p donne 81,6 PPI et un pas de pixel de 0,31 mm, contre 108,8 PPI et 0,23 mm pour le Q27G2U. C'est la confusion la plus coûteuse de la gamme.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Que signifie le suffixe /BK sur les références AOC ?</div>
+            <div class="faq-a"><p>Le /BK désigne uniquement le coloris noir du châssis. Un Q27G2U et un Q27G2U/BK sont exactement le même écran, avec la même dalle et les mêmes performances. Ce suffixe est fréquemment omis par les revendeurs, ce qui crée deux fiches produit pour un seul modèle. Il ne doit jamais entrer dans votre décision d'achat.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">L'AOC Q27G2U vaut-il encore le coup en 2026 ?</div>
+            <div class="faq-a"><p>Sa dalle IPS 1440p à 144 Hz et ses 108,8 PPI n'ont pas vieilli : le combo 27 pouces 1440p reste le point d'équilibre en 2026, sans mise à l'échelle Windows. Ce qui a changé, c'est le marché autour. Sorti en décembre 2019, il est désormais concurrencé par des 1440p à 165 ou 180 Hz dans la même zone de prix. Il reste un achat correct s'il est nettement moins cher que ces derniers, pas au même tarif.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Quelle est la plage FreeSync de l'AOC Q27G2U ?</div>
+            <div class="faq-a"><p>La plage FreeSync s'étend de 48 à 144 Hz, avec la compensation de faible fréquence (LFC) qui prend le relais sous 48 images par seconde en dupliquant les images. En pratique, la synchronisation reste donc active même quand un jeu tombe à 35 ou 40 fps. Ces mesures proviennent du test publié par <a href="https://pcmonitors.info/" target="_blank" rel="noopener">pcmonitors.info</a>.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">L'AOC Q27G2U a-t-il des haut-parleurs corrects ?</div>
+            <div class="faq-a"><p>Non. Le site gamerstuff attribue 3 sur 10 au son de cet écran, pour une note globale de 8,2 sur 10. Les haut-parleurs intégrés dépannent pour une visioconférence ou une vidéo YouTube, mais ils ne remplacent ni un casque ni des enceintes. Sur un écran gaming à ce prix, c'est une constante du marché plutôt qu'un défaut spécifique à AOC.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Combien de PPI fait un écran 27 pouces en 1440p ?</div>
+            <div class="faq-a"><p>Un 27 pouces en 2560x1440 affiche 108,8 PPI, soit environ 109. Le calcul : la diagonale de la grille de pixels vaut la racine carrée de 2560 au carré plus 1440 au carré, ce qui donne 2 937 pixels, divisés par 27 pouces. Le pas de pixel qui en découle est de 0,23 mm. C'est la densité qui permet à Windows de tourner à 100 % sans aucune mise à l'échelle.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Pourquoi ce site n'affiche-t-il pas le prix du Q27G2U ?</div>
+            <div class="faq-a"><p>Parce qu'on n'a pas de robot qui surveille les tarifs, et qu'un prix écrit en dur dans une page devient faux en quelques semaines sans que personne s'en aperçoive. Les comparateurs qui ont un crawler affichent eux-mêmes des tarifs qui dérivent. Plutôt que d'hériter du problème sans avoir l'outil, on renvoie vers la recherche Amazon de la référence : le prix du jour y fait foi, et notre règle de décision est expliquée dans la section « vaut-il encore le coup en 2026 ».</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="logo" style="margin-bottom:1rem"><div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div> quel-ecran-choisir.fr</div><p>Comparatifs indépendants d'écrans PC.</p></div>
+        <div><h4>Par usage</h4><ul><li><a href="gaming.html">Gaming</a></li><li><a href="bureautique.html">Bureautique</a></li><li><a href="creation.html">Création</a></li><li><a href="programmation.html">Programmation</a></li></ul></div>
+        <div><h4>Par format</h4><ul><li><a href="ultrawide.html">Ultrawide</a></li><li><a href="pas-cher.html">Moins de 200&euro;</a></li><li><a href="27-ou-32-pouces.html">27 ou 32 pouces ?</a></li></ul></div>
+        <div><h4>Ressources</h4><ul><li><a href="aoc-q27g2u.html">Décodeur AOC Q27G2U</a></li><li><a href="/#guide">Guide d'achat</a></li><li><a href="/#faq">FAQ</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 quel-ecran-choisir.fr</span><span>Liens affiliés Amazon | Prix indicatifs</span></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
+</body>
+</html>
