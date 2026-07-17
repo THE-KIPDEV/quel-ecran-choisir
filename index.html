@@ -421,6 +421,31 @@
           </div>
         </div>
       </div>
+
+      <div class="guide-block" id="ppi-calc">
+        <h3>Calculateur de densité (PPI) : le seul chiffre qui départage deux tailles</h3>
+        <p>Deux écrans peuvent afficher la même définition et n'avoir rien à voir à l'usage. Un 1440p tient 109 PPI en 27 pouces, il tombe à 93 en 32. C'est ce chiffre, pas la définition, qui décide si le texte sera net et si Windows tournera à 100 % sans mise à l'échelle. Entrez une définition et une diagonale, vous obtenez le PPI réel, le pas de pixel en millimètres et les dimensions physiques de la dalle. Tout est calculé dans votre navigateur, aucune donnée n'est envoyée.</p>
+        <div class="guide-grid" data-ppi-calc>
+          <div class="guide-item">
+            <h4><label for="ppi-res">Définition</label></h4>
+            <select id="ppi-res" data-ppi-res style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+              <option value="2560x1440">2560 x 1440 (QHD)</option>
+              <option value="1920x1080">1920 x 1080 (Full HD)</option>
+              <option value="3840x2160">3840 x 2160 (4K)</option>
+              <option value="3440x1440">3440 x 1440 (ultrawide)</option>
+            </select>
+            <p class="mt-1">Celle qui figure sur la fiche du vendeur, pas celle réglée dans Windows.</p>
+          </div>
+          <div class="guide-item">
+            <h4><label for="ppi-diag">Diagonale en pouces</label></h4>
+            <input type="number" id="ppi-diag" data-ppi-diag value="27" min="15" max="60" step="0.1" inputmode="decimal" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem">
+            <p class="mt-1">Un « 32 pouces » mesure en réalité 31,5 pouces. Un 27 fait bien 27.</p>
+          </div>
+        </div>
+        <button type="button" data-ppi-btn class="btn-amazon mt-3" style="width:100%">Calculer la densité</button>
+        <div data-ppi-result class="verdict mt-3" hidden aria-live="polite"></div>
+        <p class="mt-3">La valeur par défaut, 27 pouces en 1440p, donne <strong>108,8 PPI</strong> — le point d'équilibre : texte net sans scaling. Passez la diagonale à 32 sans toucher à la définition, vous tombez à <strong>91,8 PPI</strong> pour exactement le même nombre de fenêtres à l'écran. Le détail des quatre cases courantes est sur notre page <a href="27-ou-32-pouces.html">27 ou 32 pouces</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -434,16 +459,17 @@
         </div>
       </div>
 
+      <p>Cliquez sur un en-tête de colonne pour trier — par prix pour tenir un budget, par fréquence pour le jeu, par définition pour la netteté.</p>
       <div class="table-wrap">
-        <table class="comp-table">
+        <table class="comp-table" data-sortable>
           <thead>
             <tr>
               <th>Modèle</th>
               <th>Taille</th>
               <th>Définition</th>
-              <th>Dalle</th>
+              <th data-no-sort>Dalle</th>
               <th>Fréq.</th>
-              <th>Usage ideal</th>
+              <th data-no-sort>Usage ideal</th>
               <th>Prix</th>
             </tr>
           </thead>
@@ -455,7 +481,7 @@
               <td>Nano IPS</td>
               <td>165 Hz</td>
               <td>Gaming / Polyvalent</td>
-              <td class="price-cell">~290&euro;</td>
+              <td class="price-cell" data-sort-value="290">~290&euro;</td>
             </tr>
             <tr>
               <td class="model-name">Dell S2425HS</td>
@@ -464,7 +490,7 @@
               <td>IPS</td>
               <td>100 Hz</td>
               <td>Bureau / Budget</td>
-              <td class="price-cell">~120&euro;</td>
+              <td class="price-cell" data-sort-value="120">~120&euro;</td>
             </tr>
             <tr>
               <td class="model-name">ASUS ProArt PA279CRV</td>
@@ -473,7 +499,7 @@
               <td>IPS</td>
               <td>60 Hz</td>
               <td>Création / Design</td>
-              <td class="price-cell">~450&euro;</td>
+              <td class="price-cell" data-sort-value="450">~450&euro;</td>
             </tr>
             <tr>
               <td class="model-name">Philips 27E1N5600AE</td>
@@ -482,7 +508,7 @@
               <td>IPS</td>
               <td>75 Hz</td>
               <td>Bureau / Teletravail</td>
-              <td class="price-cell">~215&euro;</td>
+              <td class="price-cell" data-sort-value="215">~215&euro;</td>
             </tr>
             <tr>
               <td class="model-name">AOC 24G2SPAE</td>
@@ -491,7 +517,7 @@
               <td>IPS</td>
               <td>165 Hz</td>
               <td>Gaming budget</td>
-              <td class="price-cell">~145&euro;</td>
+              <td class="price-cell" data-sort-value="145">~145&euro;</td>
             </tr>
             <tr>
               <td class="model-name">Xiaomi G34WQi</td>
@@ -500,7 +526,7 @@
               <td>VA curve</td>
               <td>180 Hz</td>
               <td>Ultrawide / Gaming</td>
-              <td class="price-cell">~275&euro;</td>
+              <td class="price-cell" data-sort-value="275">~275&euro;</td>
             </tr>
             <tr>
               <td class="model-name">LG 27GX790A-B</td>
@@ -509,7 +535,7 @@
               <td>OLED</td>
               <td>480 Hz</td>
               <td>Gaming haut de gamme</td>
-              <td class="price-cell">~700&euro;</td>
+              <td class="price-cell" data-sort-value="700">~700&euro;</td>
             </tr>
           </tbody>
         </table>
@@ -613,5 +639,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
 </body>
 </html>

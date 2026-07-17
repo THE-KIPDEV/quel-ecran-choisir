@@ -408,17 +408,18 @@
             <h2>Tableau comparatif écrans gaming</h2>
           </div>
         </div>
+        <p>Cliquez sur un en-tête pour trier : par fréquence pour le compétitif, par prix pour arbitrer le budget, par temps de réponse pour la réactivité.</p>
         <div class="table-wrap">
-          <table class="comp-table">
+          <table class="comp-table" data-sortable>
             <thead>
               <tr>
                 <th>Modèle</th>
                 <th>Taille</th>
                 <th>Définition</th>
-                <th>Dalle</th>
+                <th data-no-sort>Dalle</th>
                 <th>Fréq.</th>
                 <th>Réponse</th>
-                <th>Sync</th>
+                <th data-no-sort>Sync</th>
                 <th>Prix</th>
               </tr>
             </thead>
@@ -431,7 +432,7 @@
                 <td>165 Hz</td>
                 <td>1ms</td>
                 <td>FreeSync + G-Sync</td>
-                <td class="price-cell">~145&euro;</td>
+                <td class="price-cell" data-sort-value="145">~145&euro;</td>
               </tr>
               <tr>
                 <td class="model-name">Samsung Odyssey G3</td>
@@ -441,7 +442,7 @@
                 <td>165 Hz</td>
                 <td>1ms</td>
                 <td>FreeSync Premium</td>
-                <td class="price-cell">~165&euro;</td>
+                <td class="price-cell" data-sort-value="165">~165&euro;</td>
               </tr>
               <tr>
                 <td class="model-name">LG 27GP850P-B</td>
@@ -451,7 +452,7 @@
                 <td>165 Hz</td>
                 <td>1ms</td>
                 <td>FreeSync + G-Sync</td>
-                <td class="price-cell">~290&euro;</td>
+                <td class="price-cell" data-sort-value="290">~290&euro;</td>
               </tr>
               <tr>
                 <td class="model-name">LG 27GX790A-B</td>
@@ -461,7 +462,7 @@
                 <td>480 Hz</td>
                 <td>0.03ms</td>
                 <td>FreeSync + G-Sync</td>
-                <td class="price-cell">~700&euro;</td>
+                <td class="price-cell" data-sort-value="700">~700&euro;</td>
               </tr>
             </tbody>
           </table>
@@ -497,6 +498,31 @@
               <p>FreeSync (AMD) est gratuit et largement disponible. G-Sync (NVIDIA) offre un fonctionnement légèrement meilleur à bas FPS. La majorité des écrans FreeSync sont désormais G-Sync Compatible.</p>
             </div>
           </div>
+        </div>
+
+        <div class="guide-block" id="ppi-calc">
+          <h3>Calculateur de densité (PPI) : combien votre GPU devra pousser de pixels</h3>
+          <p>En gaming, la densité tranche deux débats d'un coup : la netteté à l'écran et la charge sur la carte graphique. Un 24 pouces 1080p tient 92 PPI, un 27 pouces 1440p 109, un 32 pouces 4K 138 — mais le 4K demande 2,25 fois plus de pixels par image que le 1440p, ce que votre GPU paie en images par seconde. Entrez la définition et la diagonale visées : vous obtenez le PPI réel, le pas de pixel et les dimensions de la dalle. Calcul local, rien n'est envoyé.</p>
+          <div class="guide-grid" data-ppi-calc>
+            <div class="guide-item">
+              <h4><label for="ppi-res">Définition</label></h4>
+              <select id="ppi-res" data-ppi-res style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="1920x1080">1920 x 1080 (Full HD)</option>
+                <option value="2560x1440">2560 x 1440 (QHD)</option>
+                <option value="3840x2160">3840 x 2160 (4K)</option>
+                <option value="3440x1440">3440 x 1440 (ultrawide)</option>
+              </select>
+              <p class="mt-1">Celle de la fiche du vendeur, pas celle réglée dans le jeu.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="ppi-diag">Diagonale en pouces</label></h4>
+              <input type="number" id="ppi-diag" data-ppi-diag value="23.8" min="15" max="60" step="0.1" inputmode="decimal" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem">
+              <p class="mt-1">Un « 24 pouces » compétitif mesure en général 23,8 pouces.</p>
+            </div>
+          </div>
+          <button type="button" data-ppi-btn class="btn-amazon mt-3" style="width:100%">Calculer la densité</button>
+          <div data-ppi-result class="verdict mt-3" hidden aria-live="polite"></div>
+          <p class="mt-3">La valeur par défaut, 23,8 pouces en 1080p, donne <strong>92,6 PPI</strong> : c'est pour ça que le 1080p reste jouable sur un 24 pouces alors qu'il pique les yeux sur un 27. Le raisonnement complet taille contre définition est sur notre page <a href="27-ou-32-pouces.html">27 ou 32 pouces</a>.</p>
         </div>
 
         <div class="verdict">
@@ -571,5 +597,6 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
 </body>
 </html>
