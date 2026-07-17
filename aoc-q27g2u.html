@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AOC Q27G2U : test, specs et le piège du CQ27G2U (2026)</title>
-  <meta name="description" content="Q27G2U, CQ27G2U, 27G2U, CQ27G2 : quatre écrans différents, des noms quasi identiques. Décodeur de référence, specs complètes et verdict 2026.">
+  <meta name="description" content="Q27G2U, Q27G2S, CQ27G2U, 27G2U : des noms à une lettre près, des écrans différents. Décodeur de référence, specs, et où sont vraiment les 165 Hz.">
   <link rel="canonical" href="https://quel-ecran-choisir.fr/aoc-q27g2u.html">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
@@ -96,6 +96,14 @@
           },
           {
             "@type": "Question",
+            "name": "L'AOC Q27G2U est-il en 165 Hz ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non, le Q27G2U est un 144 Hz. Les 165 Hz souvent associés à cette référence sont ceux du Q27G2S, un modèle distinct : même 27 pouces, même dalle IPS plate, même 2560x1440, mais 165 Hz sur la version Q27G2S/EU vendue en France. La fiche AOC américaine annonce 170 Hz pour ce même Q27G2S, l'écart vient de la déclinaison régionale. Contrepartie à connaître : le Q27G2S n'a pas de hub USB, là où le U final du Q27G2U en garantit un."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "L'AOC 27G2U est-il en 1440p ?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -178,6 +186,10 @@
         <p>Le <strong>Q27G2U</strong> est le 27 pouces <strong>IPS plat</strong> en 2560x1440 à 144 Hz. Le <strong>CQ27G2U</strong>, à une lettre près, est un <strong>VA incurvé</strong> — autre dalle, autre comportement, ghosting signalé. Le <strong>27G2U</strong>, sans le Q, est en <strong>1080p</strong> sur 27 pouces, soit 81,6 PPI : c'est l'erreur la plus chère de la gamme. Si vous voulez l'IPS plat, la référence exacte à taper dans la barre de recherche est <strong>Q27G2U</strong>, et rien d'autre.</p>
       </div>
 
+      <div class="affiliate-notice mt-3">
+        <strong>Vous cherchiez peut-être les 165 Hz ?</strong> Alors vous ne cherchez pas le Q27G2U. Il est donné pour <strong>144 Hz</strong>, et il n'a jamais fait mieux. Les 165 Hz que les fiches marchandes et les tests collent régulièrement à « q27g2u » appartiennent au <strong>Q27G2S</strong> : même 27 pouces, même IPS plat, même 2560x1440, mais 165 Hz sur le Q27G2S/EU vendu en France — la fiche AOC américaine, elle, annonce 170 Hz sur ce même modèle. Le piège se referme dans l'autre sens : le S n'a pas de U final, donc <strong>pas de hub USB</strong>. Vous gagnez 21 Hz, vous perdez les quatre ports. Sources : <a href="https://www.aoc.com/us/gaming/monitors/q27g2s" target="_blank" rel="nofollow noopener">fiche AOC US du Q27G2S</a> (170 Hz, IPS, plat) et la <a href="https://manuals.plus/aoc/aoc-q27g2s-eu-27-inch-165hz-qhd-gaming-monitor-specifications-and-datasheet" target="_blank" rel="nofollow noopener">datasheet du Q27G2S/EU</a> (165 Hz via DisplayPort, aucun hub USB).
+      </div>
+
       <p class="text-muted mt-2" style="font-size:0.85rem">Dernière mise à jour : juillet 2026. On n'affiche volontairement aucun prix sur cette page : nous n'avons pas de robot qui surveille les tarifs, et un prix figé dans une page finit toujours par mentir. Les liens renvoient vers la fiche Amazon de chaque référence, où le prix du jour fait foi.</p>
 
       <div class="toc">
@@ -186,7 +198,7 @@
           <li><a href="#confusion">Le SERP est cassé, et voici pourquoi</a></li>
           <li><a href="#grammaire">La grammaire des références AOC, décodée</a></li>
           <li><a href="#decodeur">Le décodeur : tapez votre référence</a></li>
-          <li><a href="#tableau-refs">Les quatre références face à face</a></li>
+          <li><a href="#tableau-refs">Q27G2U, Q27G2S, CQ27G2U, 27G2U : le face à face</a></li>
           <li><a href="#mesures">Les mesures — et de quel écran elles parlent vraiment</a></li>
           <li><a href="#fiche">Fiche technique complète du Q27G2U</a></li>
           <li><a href="#ghosting">Le ghosting du CQ27G2U</a></li>
@@ -287,9 +299,10 @@
             <div class="guide-item">
               <h4><label for="aoc-input">Référence AOC</label></h4>
               <input type="text" id="aoc-input" data-aoc-input value="Q27G2U" placeholder="Ex : CQ27G2U/BK" autocomplete="off" spellcheck="false" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem;text-transform:uppercase">
-              <p class="mt-1">Les quatre références qui se confondent, en un clic :</p>
+              <p class="mt-1">Les cinq références qui se confondent, en un clic :</p>
               <p class="mt-1">
                 <button type="button" class="btn-details" data-aoc-preset="Q27G2U">Q27G2U</button>
+                <button type="button" class="btn-details" data-aoc-preset="Q27G2S">Q27G2S</button>
                 <button type="button" class="btn-details" data-aoc-preset="CQ27G2U">CQ27G2U</button>
                 <button type="button" class="btn-details" data-aoc-preset="27G2U">27G2U</button>
                 <button type="button" class="btn-details" data-aoc-preset="CQ27G2">CQ27G2</button>
@@ -301,7 +314,7 @@
 
         <div data-aoc-result class="verdict" hidden aria-live="polite"></div>
 
-        <p class="text-muted mt-2" style="font-size:0.85rem">Six références sont dans notre table vérifiée. Pour toute autre référence AOC, l'outil applique la grammaire ci-dessus et vous le signale explicitement : un décodage déduit n'est pas une fiche constructeur, et on préfère vous le dire plutôt que d'avoir l'air sûr de nous.</p>
+        <p class="text-muted mt-2" style="font-size:0.85rem">Sept références sont dans notre table vérifiée. Pour toute autre référence AOC, l'outil applique la grammaire ci-dessus et vous le signale explicitement : un décodage déduit n'est pas une fiche constructeur, et on préfère vous le dire plutôt que d'avoir l'air sûr de nous.</p>
 
         <div class="affiliate-notice">
           <strong>Pourquoi cet outil existe :</strong> on gagne de l'argent quand vous cliquez sur un lien Amazon. Un décodeur qui vous dirait « oui oui, c'est le bon » à chaque fois maximiserait nos clics à court terme. Sauf qu'un écran renvoyé, c'est une commission annulée et un lecteur perdu. Notre intérêt et le vôtre pointent dans la même direction : que vous receviez le carton que vous attendiez.
@@ -313,7 +326,7 @@
         <div class="section-header">
           <div>
             <div class="section-tag">Face à face</div>
-            <h2>Les quatre références face à face</h2>
+            <h2>Q27G2U, Q27G2S, CQ27G2U, 27G2U : le face à face</h2>
           </div>
         </div>
 
@@ -344,6 +357,16 @@
                 <td data-sort-value="144">144</td>
                 <td>Oui</td>
                 <td><strong class="text-green">Celui que vous cherchez.</strong> Couleurs et angles IPS, écran plat, densité correcte.</td>
+              </tr>
+              <tr>
+                <td class="model-name">Q27G2S</td>
+                <td><span class="text-green">IPS</span></td>
+                <td>Plate</td>
+                <td>2560x1440</td>
+                <td class="price-cell" data-sort-value="108.8">108,8</td>
+                <td data-sort-value="165"><span class="text-green">165</span></td>
+                <td><span class="text-orange">Non</span></td>
+                <td><strong>Les fameux 165 Hz.</strong> Ils ne sont pas au Q27G2U : ils sont ici. Même IPS plat 1440p, 21 Hz de plus, mais pas de hub USB.</td>
               </tr>
               <tr>
                 <td class="model-name">CQ27G2U</td>
@@ -756,6 +779,10 @@
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">Quelle est la différence entre l'AOC Q27G2U et le CQ27G2U ?</div>
             <div class="faq-a"><p>Le C initial signifie « curved » : le CQ27G2U est un écran incurvé à dalle VA, alors que le Q27G2U est plat à dalle IPS. Les deux sont des 27 pouces 2560x1440 à 144 Hz, mais tout le reste diffère. Le VA offre un contraste bien supérieur, autour de 2 500:1 contre environ 1 000:1 pour l'IPS, au prix d'angles de vision plus étroits et de traînées sombres en mouvement rapide. Une seule lettre sépare les deux références.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">L'AOC Q27G2U est-il en 165 Hz ?</div>
+            <div class="faq-a"><p>Non, le Q27G2U est un 144 Hz. Les 165 Hz souvent associés à cette référence sont ceux du <strong>Q27G2S</strong>, un modèle distinct : même 27 pouces, même dalle IPS plate, même 2560x1440, mais 165 Hz sur la version Q27G2S/EU vendue en France. La fiche AOC américaine annonce 170 Hz pour ce même Q27G2S, l'écart vient de la déclinaison régionale. Contrepartie à connaître : le Q27G2S n'a pas de hub USB, là où le U final du Q27G2U en garantit un.</p></div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">L'AOC 27G2U est-il en 1440p ?</div>

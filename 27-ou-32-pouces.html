@@ -150,6 +150,7 @@
           <li><a href="#fausse-question">Pourquoi « 27 ou 32 » est une fausse question</a></li>
           <li><a href="#matrice">La matrice 27/32 x 1440p/4K</a></li>
           <li><a href="#piege-32-1440">Le piège du 32 pouces 1440p</a></li>
+          <li><a href="#ppi-calc">Calculateur PPI : vérifiez n'importe quelle combinaison</a></li>
           <li><a href="#scaling">La vérité sur le scaling Windows et macOS</a></li>
           <li><a href="#cm">Dimensions réelles en cm et test du recul</a></li>
           <li><a href="#gpu">Le coût GPU caché du 4K</a></li>
@@ -301,6 +302,45 @@
         <div class="affiliate-notice">
           <strong>Pourquoi on peut vous dire « ne prenez pas le 32 pouces » :</strong> on ne vend aucun écran et on n'a aucun stock à écouler. Les sites de marques ont des moniteurs à vendre, les comparateurs de prix ont un catalogue à faire tourner : décourager un achat leur coûte de l'argent. Nous, un lecteur qui repart avec le bon écran du premier coup, c'est notre seul produit.
         </div>
+      </div>
+
+      <!-- 3bis. CALCULATEUR PPI -->
+      <div id="ppi-calc">
+        <div class="section-header">
+          <div>
+            <div class="section-tag">Outil</div>
+            <h2>Calculateur PPI : vérifiez n'importe quelle combinaison</h2>
+          </div>
+        </div>
+
+        <p>La matrice plus haut couvre les quatre cases courantes. Mais vous avez peut-être un 34 pouces en tête, ou un 24, ou l'écran d'occasion d'un collègue. Le calcul est le même pour tous : diagonale en pixels divisée par diagonale en pouces. Entrez vos deux valeurs, vous aurez le PPI, le pas de pixel en millimètres et les dimensions réelles de la dalle.</p>
+
+        <div class="guide-block" data-ppi-calc>
+          <div class="guide-grid">
+            <div class="guide-item">
+              <h4><label for="ppi-res">Définition</label></h4>
+              <select id="ppi-res" data-ppi-res style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-size:0.95rem">
+                <option value="2560x1440">2560 x 1440 (QHD)</option>
+                <option value="3840x2160">3840 x 2160 (4K)</option>
+                <option value="1920x1080">1920 x 1080 (Full HD)</option>
+                <option value="3440x1440">3440 x 1440 (ultrawide)</option>
+              </select>
+              <p class="mt-1">Celle qui figure sur la fiche du vendeur, pas celle réglée dans Windows.</p>
+            </div>
+            <div class="guide-item">
+              <h4><label for="ppi-diag">Diagonale en pouces</label></h4>
+              <input type="number" id="ppi-diag" data-ppi-diag value="32" min="15" max="60" step="0.1" inputmode="decimal" style="width:100%;padding:0.6rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;color:var(--white);font-family:var(--font-mono);font-size:1rem">
+              <p class="mt-1">Un « 32 pouces » mesure en réalité 31,5 pouces. Un 27 fait bien 27.</p>
+            </div>
+          </div>
+          <button type="button" data-ppi-btn class="btn-amazon mt-3" style="width:100%">Calculer la densité</button>
+        </div>
+
+        <div data-ppi-result class="verdict" hidden aria-live="polite"></div>
+
+        <p class="mt-3">Le résultat par défaut, 32 pouces en 1440p, donne <strong>91,8 PPI</strong> — la case dont on vient de vous déconseiller. Repassez la diagonale à 27 sans toucher à la définition : <strong>108,8 PPI</strong>. Même grille, même nombre de fenêtres, mais un pas de pixel qui tombe de 0,28 à 0,23 mm. Ces 5 centièmes de millimètre, c'est tout le sujet de cette page.</p>
+
+        <p>Le calcul marche aussi dans l'autre sens, et c'est là qu'il devient un détecteur d'arnaque de référence. Chez AOC, le Q27G2U et le 27G2U ont la même diagonale et une lettre d'écart : 108,8 PPI contre 81,6. On a détaillé cette nomenclature dans notre <a href="aoc-q27g2u.html">décodeur de référence AOC Q27G2U</a>, parce que les fiches produit des marchands mélangent allègrement les deux.</p>
       </div>
 
       <!-- 4. SCALING -->
@@ -728,6 +768,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/tools.js"></script>
   <script>
   (function () {
     var MODELES = {

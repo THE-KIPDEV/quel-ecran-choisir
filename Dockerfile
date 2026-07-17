@@ -2,14 +2,11 @@ FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY index.html /usr/share/nginx/html/
-COPY gaming.html /usr/share/nginx/html/
-COPY bureautique.html /usr/share/nginx/html/
-COPY creation.html /usr/share/nginx/html/
-COPY programmation.html /usr/share/nginx/html/
-COPY ultrawide.html /usr/share/nginx/html/
-COPY pas-cher.html /usr/share/nginx/html/
-COPY 27-ou-32-pouces.html /usr/share/nginx/html/
+# Glob volontaire : un COPY fichier par fichier a deja fait qu'une page publiee
+# (aoc-q27g2u.html) n'etait pas dans l'image. nginx servait alors index.html en
+# fallback -> soft 404 a 200, aucune alerte. Toute nouvelle page .html part
+# desormais en prod sans toucher au Dockerfile.
+COPY *.html /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/

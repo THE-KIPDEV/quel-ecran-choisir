@@ -59,6 +59,16 @@
       resume: "Pas de Q : c'est du 1080p, pas du 1440p. Sur 27 pouces, ça fait 82 PPI — la densité la plus basse de toute la gamme. Un pixel de 0,31 mm, visible à 70 cm. L'erreur de commande la plus coûteuse de la série.",
       lien: 'https://www.amazon.fr/s?k=AOC+27G2U&tag=yohannleskits-21'
     },
+    'Q27G2S': {
+      nom: 'AOC Q27G2S',
+      dalle: 'IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '165 Hz sur le Q27G2S/EU vendu en France (170 Hz sur la fiche AOC US)',
+      usb: 'Aucun hub USB — pas de U final dans la référence',
+      sortie: 'Gamme G2',
+      verdict: 'attention',
+      resume: "Si vous cherchiez « le Q27G2U 165 Hz », c'est ce modèle-ci que vous voulez : le Q27G2U plafonne à 144 Hz, les 165 Hz appartiennent au Q27G2S. Même dalle IPS plate, même 1440p. Mais le S n'a pas le U : vous gagnez 21 Hz et vous perdez le hub USB. À vous de dire lequel des deux vous sert vraiment tous les jours.",
+      lien: 'https://www.amazon.fr/s?k=AOC+Q27G2S&tag=yohannleskits-21'
+    },
     'CQ27G2': {
       nom: 'AOC CQ27G2',
       dalle: 'VA', courbure: 'Incurvée (1500R)', taille: '27"', res: '2560 x 1440 (QHD)',
@@ -152,10 +162,16 @@
     if (!input || !btn || !out) return;
 
     function render() {
+      var saisie = normalizeRef(input.value);
       var res = decodeAoc(input.value);
       if (!res) {
         out.hidden = false;
-        out.innerHTML = '<h3>Référence vide</h3><p>Tapez une référence AOC, par exemple <strong>Q27G2U</strong> ou <strong>CQ27G2U/BK</strong>.</p>';
+        // Champ vide et référence non déchiffrable sont deux cas distincts :
+        // afficher « Référence vide » à quelqu'un qui a tapé un modèle Dell
+        // lui fait croire que son clavier a lâché.
+        out.innerHTML = saisie
+          ? '<h3>Référence illisible</h3><p>« ' + esc(input.value) + ' » ne suit pas la grammaire des références AOC. Ce décodeur ne connaît que les écrans AOC : pour une autre marque, il ne saura rien vous dire. Une référence AOC ressemble à <strong>Q27G2U</strong>, <strong>CQ27G2U/BK</strong> ou <strong>24G2SPAE</strong>.</p>'
+          : '<h3>Référence vide</h3><p>Tapez une référence AOC, par exemple <strong>Q27G2U</strong> ou <strong>CQ27G2U/BK</strong>.</p>';
         return;
       }
 
