@@ -220,6 +220,217 @@
   }
 
   /* --------------------------------------------
+     1bis. DECODEUR DE REFERENCE LG ULTRAGEAR
+     Grammaire de la gamme UltraGear :
+       [taille]G[lettre-génération][tier][suffixe]-[coloris]
+       G           = UltraGear (gaming)
+       2e lettre   = génération / millésime :
+                     L ≈ 2019-2020, N ≈ 2020, P ≈ 2021, R ≈ 2022-2023, X = OLED
+       850/83B/800 = le tier dans la génération
+       P avant -B  = variante revendeur/région (même dalle) : 27GP850P-B = 27GP850-B
+       -B / -W     = coloris (Black / White)
+     -------------------------------------------- */
+
+  var LG_KNOWN = {
+    '27GP850': {
+      nom: 'LG UltraGear 27GP850-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '165 Hz natif, 180 Hz en overclock (via DisplayPort 1.4)',
+      reponse: '1 ms GtG', hdr: 'VESA DisplayHDR 400', usb: 'Hub USB 3.0 intégré',
+      sortie: '2021 (génération GP)',
+      verdict: 'ok',
+      resume: "C'est la référence de 2021 que la plupart des gens veulent : Nano IPS 1440p, 165 Hz poussable à 180, DisplayHDR 400 et un hub USB. Le hub et la certification HDR400 sont précisément ce qui la sépare de sa petite sœur 27GP83B-B.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GP850-B&tag=yohannleskits-21'
+    },
+    '27GP850P': {
+      nom: 'LG UltraGear 27GP850P-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '165 Hz natif, 180 Hz en overclock (via DisplayPort 1.4)',
+      reponse: '1 ms GtG', hdr: 'VESA DisplayHDR 400', usb: 'Hub USB 3.0 intégré',
+      sortie: '2021 (génération GP)',
+      verdict: 'ok',
+      resume: "Le P inséré avant le -B n'est pas une meilleure version : c'est la même dalle Nano IPS, les mêmes 165/180 Hz, le même hub USB que le 27GP850-B. Ce suffixe est une référence de revendeur/région (elle apparaît sur les fiches UK/EU). Ne payez pas plus cher pour le P : les deux cartons contiennent le même écran.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GP850P-B&tag=yohannleskits-21'
+    },
+    '27GP83B': {
+      nom: 'LG UltraGear 27GP83B-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '165 Hz natif, 180 Hz en overclock (via DisplayPort 1.4)',
+      reponse: '1 ms GtG', hdr: 'HDR10 seul (pas de certification DisplayHDR 400)',
+      usb: 'Aucun hub USB',
+      sortie: '2021 (génération GP)',
+      verdict: 'attention',
+      resume: "Même dalle Nano IPS que le 27GP850-B, mêmes 165/180 Hz : sur l'image et la fluidité, vous ne verrez pas la différence. Ce qui saute, c'est le hub USB (absent) et la certification DisplayHDR 400 (ici c'est du HDR10 non certifié). C'est la version dégradée, à ne prendre que si elle est nettement moins chère.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GP83B-B&tag=yohannleskits-21'
+    },
+    '27GL850': {
+      nom: 'LG UltraGear 27GL850-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '144 Hz', reponse: '1 ms GtG', hdr: 'VESA DisplayHDR 400', usb: 'Hub USB 3.0 intégré',
+      sortie: '2019 (génération GL)',
+      verdict: 'attention',
+      resume: "C'est l'ancêtre de 2019 (génération GL, pas GP). Même diagonale, même Nano IPS, mais 144 Hz au lieu de 165/180. Un GL vendu au prix d'un GP n'a aucun intérêt : vous payez une génération pour une fréquence de moins.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GL850-B&tag=yohannleskits-21'
+    },
+    '27GN850': {
+      nom: 'LG UltraGear 27GN850-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '144 Hz natif, 165 Hz en overclock', reponse: '1 ms GtG', hdr: 'VESA DisplayHDR 400',
+      usb: 'Hub USB 3.0 intégré',
+      sortie: '2020 (génération GN)',
+      verdict: 'attention',
+      resume: "La génération intermédiaire de 2020 (GN). 144 Hz natif, 165 Hz en overclock : un cran sous le 27GP850 qui fait 165 natif et grimpe à 180. Bon écran, mais ce n'est pas le GP que vous cherchiez si vous visiez les 180 Hz.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GN850-B&tag=yohannleskits-21'
+    },
+    '27GR83Q': {
+      nom: 'LG UltraGear 27GR83Q-B',
+      dalle: 'IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '240 Hz', reponse: '1 ms GtG', hdr: 'VESA DisplayHDR 400', usb: 'Aucun hub USB',
+      sortie: '2023 (génération GR)',
+      verdict: 'ok',
+      resume: "Le cran au-dessus de 2023 : même 1440p, mais 240 Hz et HDMI 2.1. Si vous hésitez avec le 27GP850, la vraie question est : avez-vous une carte graphique capable de pousser 240 fps en 1440p ? Sinon, les 75 Hz de plus ne se voient pas et vous payez pour rien.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GR83Q-B&tag=yohannleskits-21'
+    },
+    '27GL83A': {
+      nom: 'LG UltraGear 27GL83A-B',
+      dalle: 'Nano IPS', courbure: 'Plate', taille: '27"', res: '2560 x 1440 (QHD)',
+      hz: '144 Hz', reponse: '1 ms GtG', hdr: 'HDR10 seul', usb: 'Aucun hub USB',
+      sortie: '2020 (génération GL, version réduite)',
+      verdict: 'attention',
+      resume: "La version allégée du GL850 de 2019 : 144 Hz, mais sans hub USB ni DisplayHDR 400. Deux générations derrière le 27GP850 et amputée de ses ports. À réserver aux très bonnes affaires.",
+      lien: 'https://www.amazon.fr/s?k=LG+27GL83A-B&tag=yohannleskits-21'
+    }
+  };
+
+  // Normalise une référence LG : majuscules, retire espaces, "LG", "ULTRAGEAR"
+  // et le coloris final (-B, -W, /BK...). Conserve le P de 27GP850P et le B de 27GP83B.
+  function normalizeLg(raw) {
+    var s = String(raw || '').toUpperCase();
+    s = s.replace(/\s+/g, '');
+    s = s.replace(/ULTRAGEAR/g, '').replace(/^LG/, '');
+    // coloris : seulement précédé d'un tiret ou d'un slash, sinon on garde (27GP83B)
+    s = s.replace(/[-/](BK|WS|SW|B|W)$/, '');
+    return s;
+  }
+
+  function decodeLgGrammar(ref) {
+    var m = ref.match(/^(\d{2,3})G([A-Z])(\d{2,4})([A-Z]?)$/);
+    if (!m) return null;
+    var taille = m[1];
+    var gen = m[2];
+    var genMap = {
+      L: '≈ 2019-2020 (génération GL)',
+      N: '≈ 2020 (génération GN)',
+      P: '≈ 2021 (génération GP)',
+      R: '≈ 2022-2023 (génération GR)',
+      S: '≈ 2024 (génération GS)',
+      X: 'dalle OLED (série GX)'
+    };
+    return {
+      nom: 'LG UltraGear ' + ref,
+      dalle: gen === 'X' ? 'OLED (série GX)' : 'IPS / Nano IPS selon le tier (à vérifier)',
+      courbure: 'À vérifier (la plupart des 27" UltraGear sont plats)',
+      taille: taille + '"',
+      res: taille === '27' ? 'Souvent 2560 x 1440 sur cette diagonale (à confirmer)' : 'À vérifier sur la fiche',
+      hz: 'Gamme gaming : 144 Hz ou plus, à vérifier',
+      reponse: 'À vérifier', hdr: 'À vérifier',
+      usb: 'À vérifier sur la fiche du vendeur',
+      sortie: genMap[gen] || 'Génération non répertoriée ici',
+      verdict: 'inconnu',
+      resume: "Cette référence exacte n'est pas dans notre table vérifiée. Le décodage vient de la grammaire UltraGear (la 2e lettre après le G indique le millésime), pas d'une fiche constructeur : confirmez la dalle et la fréquence sur la fiche du vendeur avant de commander.",
+      lien: 'https://www.amazon.fr/s?k=LG+' + encodeURIComponent(ref) + '&tag=yohannleskits-21'
+    };
+  }
+
+  function decodeLg(raw) {
+    var ref = normalizeLg(raw);
+    if (!ref) return null;
+    if (LG_KNOWN[ref]) {
+      var known = LG_KNOWN[ref];
+      var copy = {};
+      for (var k in known) if (Object.prototype.hasOwnProperty.call(known, k)) copy[k] = known[k];
+      copy.exact = true;
+      return copy;
+    }
+    // 27GP850P non listé mais 27GP850 connu → variante revendeur du modèle de base
+    if (/P$/.test(ref) && LG_KNOWN[ref.slice(0, -1)]) {
+      var base = LG_KNOWN[ref.slice(0, -1)];
+      var c = {};
+      for (var j in base) if (Object.prototype.hasOwnProperty.call(base, j)) c[j] = base[j];
+      c.nom = 'LG UltraGear ' + ref + '-B';
+      c.resume = "Le P final est un suffixe de revendeur/région : même dalle et mêmes specs que le " + base.nom + ". Ne payez pas de supplément pour cette variante.";
+      c.exact = true;
+      return c;
+    }
+    var g = decodeLgGrammar(ref);
+    if (g) g.exact = false;
+    return g;
+  }
+
+  function mountLgDecoder(root) {
+    var input = find(root, '[data-lg-input]');
+    var btn = find(root, '[data-lg-btn]');
+    var out = find(root, '[data-lg-result]');
+    if (!input || !btn || !out) return;
+
+    function render() {
+      var saisie = normalizeLg(input.value);
+      var res = decodeLg(input.value);
+      if (!res) {
+        out.hidden = false;
+        out.innerHTML = saisie
+          ? '<h3>Référence illisible</h3><p>« ' + esc(input.value) + ' » ne suit pas la grammaire des références LG UltraGear. Ce décodeur ne connaît que les écrans LG : pour une autre marque, il ne saura rien vous dire. Une référence UltraGear ressemble à <strong>27GP850-B</strong>, <strong>27GP83B-B</strong> ou <strong>27GR83Q-B</strong>.</p>'
+          : '<h3>Référence vide</h3><p>Tapez une référence LG, par exemple <strong>27GP850P-B</strong> ou <strong>27GP83B-B</strong>.</p>';
+        return;
+      }
+
+      var couleur = res.verdict === 'ok' ? 'text-green' : (res.verdict === 'attention' ? 'text-orange' : 'text-cyan');
+      var titre = res.verdict === 'ok'
+        ? "C'est bien la génération que vous croyez"
+        : (res.verdict === 'attention' ? 'Attention, ce n\'est pas exactement le 27GP850' : 'Référence non répertoriée');
+
+      var rows = [
+        ['Dalle', res.dalle],
+        ['Courbure', res.courbure],
+        ['Taille', res.taille],
+        ['Définition', res.res],
+        ['Fréquence', res.hz],
+        ['Temps de réponse', res.reponse],
+        ['HDR', res.hdr],
+        ['USB', res.usb],
+        ['Génération', res.sortie]
+      ];
+      var html = '<h3><span class="' + couleur + '">' + titre + '</span> — ' + res.nom + '</h3>';
+      html += '<p>' + res.resume + '</p>';
+      html += '<div class="table-wrap mt-2"><table class="comp-table"><caption class="sr-only">Caractéristiques décodées de la référence ' + res.nom + '</caption><tbody>';
+      for (var i = 0; i < rows.length; i++) {
+        html += '<tr><td class="model-name">' + rows[i][0] + '</td><td>' + rows[i][1] + '</td></tr>';
+      }
+      html += '</tbody></table></div>';
+      if (!res.exact) {
+        html += '<p class="text-muted mt-2" style="font-size:0.85rem">Décodage déduit de la grammaire UltraGear. Non vérifié sur une fiche constructeur.</p>';
+      }
+      html += '<p class="mt-2"><a class="btn-amazon" href="' + res.lien + '" target="_blank" rel="nofollow noopener">Voir le ' + res.nom + ' sur Amazon</a></p>';
+
+      out.hidden = false;
+      out.innerHTML = html;
+      kpEvent('outbound_click_intent', { tool: 'lg_decoder', ref: res.nom });
+    }
+
+    btn.addEventListener('click', render);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); render(); }
+    });
+
+    root.querySelectorAll('[data-lg-preset]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        input.value = b.getAttribute('data-lg-preset');
+        render();
+      });
+    });
+  }
+
+  /* --------------------------------------------
      2. CALCULATEUR PPI (reutilisable)
      PPI = racine(largeur^2 + hauteur^2) / diagonale
      Pas de pixel (mm) = 25,4 / PPI
@@ -458,6 +669,7 @@
 
   function init() {
     document.querySelectorAll('[data-aoc-decoder]').forEach(mountDecoder);
+    document.querySelectorAll('[data-lg-decoder]').forEach(mountLgDecoder);
     document.querySelectorAll('[data-ppi-calc]').forEach(mountPpi);
     initCompare();
     initSortable();
@@ -470,5 +682,5 @@
   }
 
   // Expose pour tests / réutilisation sur d'autres pages du parc.
-  window.QEC = { decodeAoc: decodeAoc, computePpi: computePpi, normalizeRef: normalizeRef };
+  window.QEC = { decodeAoc: decodeAoc, decodeLg: decodeLg, computePpi: computePpi, normalizeRef: normalizeRef, normalizeLg: normalizeLg };
 })();
