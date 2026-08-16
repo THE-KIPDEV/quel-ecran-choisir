@@ -8,6 +8,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # desormais en prod sans toucher au Dockerfile.
 COPY *.html /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
+COPY 943cbd8a611a41ae0d11fa928963480d.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/
 COPY js/ /usr/share/nginx/html/js/
