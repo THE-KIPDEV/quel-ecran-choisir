@@ -7,7 +7,9 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # fallback -> soft 404 a 200, aucune alerte. Toute nouvelle page .html part
 # desormais en prod sans toucher au Dockerfile.
 COPY *.html /usr/share/nginx/html/
-COPY robots.txt /usr/share/nginx/html/
+# Glob sur les .txt : robots.txt, llms.txt et la cle de verification
+# IndexNow. Un COPY nomme oublie = fichier absent de l'image, donc 404.
+COPY *.txt /usr/share/nginx/html/
 COPY 943cbd8a611a41ae0d11fa928963480d.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/
