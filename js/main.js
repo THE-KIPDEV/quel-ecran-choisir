@@ -195,3 +195,20 @@ document.addEventListener('click', function (e) {
     }
   });
 })();
+
+/* Emplacement AboveFold : les marges n'arrivent qu'une fois l'encart peint.
+   af.js peint dans un shadow root, donc `:empty` côté CSS ne peut pas faire la
+   différence (voir le commentaire dans style.css). Le seul signal fiable est
+   l'existence du shadowRoot. */
+document.querySelectorAll('.pub-af > [data-abovefold]').forEach(function (slot) {
+  var essais = 0;
+  (function voir() {
+    if (slot.shadowRoot) {
+      slot.parentElement.classList.add('pub-af-rempli');
+      return;
+    }
+    /* af.js peut ne rien peindre du tout (emplacement invendu sur un site hors
+       catalogue) : on abandonne au bout de 10 s plutôt que de sonder à vie. */
+    if (++essais < 40) setTimeout(voir, 250);
+  })();
+});

@@ -582,6 +582,15 @@
     </div>
   </section>
 
+  <!-- Emplacement AboveFold. 🚨 af.js peint dans un SHADOW ROOT : côté document
+       la div reste sans enfant, même remplie, donc ni `:empty` ni
+       `:has(> div:empty)` ne peuvent distinguer un emplacement vendu d'un vide.
+       Marge nulle par défaut (une div vide mesure zéro, aucun blanc parasite) ;
+       main.js pose les marges quand le shadowRoot apparaît. -->
+  <div class="pub-af">
+    <div data-abovefold="af_1f3604b0fd01"></div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -601,5 +610,6 @@
   </footer>
   <script src="js/main.js"></script>
   <script src="js/tools.js"></script>
+  <script async src="https://getabovefold.com/af.js"></script>
 </body>
 </html>
