@@ -1161,3 +1161,7 @@ p { margin-bottom: 1rem; color: var(--text-dim); }
 @media (max-width: 700px) {
   .pub-af.pub-af-rempli { margin-block: 1.75rem; }
 }
+
+@font-face{font-family:Inter;src:url(/fonts/inter-latin.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{--bg:#fafafa;--bg-card:#fff;--bg-card-hover:#f0f2f4;--bg-surface:#fff;--bg-surface-alt:#f0f2f4;--border:#dce2e8;--border-light:#c4ccd5;--cyan:#1b55b0;--cyan-dark:#15438d;--purple:#5a46a3;--text:#182130;--text-dim:#465365;--text-muted:#586678;--white:#182130;--shadow:0 2px 8px #1821300a;--shadow-lg:0 8px 32px #18213012}
+h1,h2,h3,h4{font-weight:500}.hero{padding:6rem 0 4rem}.hero:before{display:none}.hero h1{font-size:clamp(2.25rem,5vw,3.5rem);font-weight:500;letter-spacing:-.04em}.hero h1 em{background:none;-webkit-text-fill-color:currentColor;color:inherit}.btn-primary{color:#fff}.cat-card:hover{box-shadow:var(--shadow)}
