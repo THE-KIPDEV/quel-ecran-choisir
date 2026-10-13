@@ -1,0 +1,2 @@
+# ads.txt de quel-ecran-choisir.fr
+google.com, pub-8560714656763639, DIRECT, f08c47fec0942fa0
